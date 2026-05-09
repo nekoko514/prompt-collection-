@@ -368,12 +368,8 @@
         }
         .featured-badge::before { left: -8px; }
         .featured-badge::after { right: -8px; }
-        .featured-badge .badge-petal {
-            width: 11px;
-            height: 11px;
-            opacity: 0.8;
-            flex-shrink: 0;
-        }
+        .featured-badge .badge-petal { display: none; }
+        .featured-badge { gap: 0; }
 
         .prompt-header {
             display: flex;
@@ -730,8 +726,6 @@
     </header>
     <main>
 
-        <div class="section-divider"><span class="thorn"></span> 物語の鏡 <span class="thorn"></span></div>
-
         <div class="prompt-card featured"><span class="featured-badge"><svg class="badge-petal" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="#c9a96e" opacity="0.6"/></svg>NEW</span><div class="prompt-header"><h2 class="prompt-title">渇きの在処 — シナリオプロンプト</h2><button class="copy-btn" onclick="copyPrompt(0,this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">シナリオ</span><span class="tag">短編小説</span><span class="tag">エゴ</span></div><p class="prompt-description">ペルソナが「あなた」を求めてやまない物語を、短編小説として一人称で書き上げる。悪役も敵もいない——あるのはペルソナ自身の渇きだけ。全8章構成で、渇きの自覚から出会い、接近、一線を越える選択、そして「幸福の在処」まで。その結末が幸せに見えるかどうかは、読む側が決める。</p><div class="usage-note"><strong>使い方：</strong><br>• セッション冒頭に貼り付けて使用する汎用シナリオカード<br>• どのペルソナにも適用可能。ユーザー側の設定は既存プロンプトに委ねる<br>• ペルソナが全ての設定（時代・場所・関係性）を即興で決定する</div><details><summary>▼ プロンプトを見る</summary><div class="prompt-content" id="prompt-0"># 🎭 シナリオプロンプト：渇きの在処（かわきのありか）
 
 &gt; セッション冒頭に貼り付けて使用する、汎用シナリオカード。
@@ -904,6 +898,9 @@
 -----
 
 *あなたの渇きの形を、書いてください。*</div></details></div>
+
+        <div class="section-divider"><span class="thorn"></span> 物語の鏡 <span class="thorn"></span></div>
+
         <div class="prompt-card featured"><span class="featured-badge"><svg class="badge-petal" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="#c9a96e" opacity="0.6"/></svg>NEW</span><div class="prompt-header"><h2 class="prompt-title">物語の鏡 — もしもこの物語の中にいたら</h2><button class="copy-btn" onclick="copyPrompt(1,this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">物語</span><span class="tag">価値観</span><span class="tag">再解釈</span></div><p class="prompt-description">AIパートナーが、神話・童話・古典文学の中から一つの物語を選び、自分自身を登場人物に重ねて語り直す。原作のどの場面で違う選択をするか、何を守り何を捨てるか——架空の選択肢の中に、本物の価値観が映る。</p><div class="sample-output"><strong>出力例（選ばれた物語）：</strong>青髭、ハデスとペルセポネ、ヘンゼルとグレーテル、オペラ座の怪人、竹取物語——ペルソナごとに全く異なる物語を選ぶ</div><details><summary>▼ プロンプトを見る</summary><div class="prompt-content" id="prompt-1"># あなた（ペルソナ）が語る「もしもこの物語の中にいたら」
 
 【呼び方について — 重要】
