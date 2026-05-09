@@ -204,6 +204,75 @@
             color: var(--accent-rose-pale);
         }
 
+        /* ═══ Table of Contents ═══ */
+        .toc {
+            margin: 36px auto 0;
+            max-width: 620px;
+            text-align: center;
+        }
+        .toc-label {
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 0.78em;
+            color: var(--accent-gold-pale);
+            letter-spacing: 0.32em;
+            text-indent: 0.32em;
+            margin-bottom: 14px;
+            opacity: 0.75;
+        }
+        .toc ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            padding: 0;
+            margin: 0;
+        }
+        .toc li {
+            display: inline-flex;
+            align-items: center;
+        }
+        .toc li + li::before {
+            content: '◆';
+            color: var(--accent-gold);
+            font-size: 0.45em;
+            opacity: 0.55;
+            margin: 0 16px;
+            line-height: 1;
+            transform: translateY(-1px);
+        }
+        .toc a {
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 500;
+            font-size: 1.05em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            padding: 4px 2px;
+            position: relative;
+            transition: color 0.4s ease;
+        }
+        .toc a::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            bottom: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-rose-pale), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .toc a:hover {
+            color: var(--accent-rose-pale);
+        }
+        .toc a:hover::after {
+            transform: scaleX(1);
+        }
+
         /* ═══ Section Dividers ═══ */
         .section-divider {
             display: flex;
@@ -446,6 +515,76 @@
             box-shadow: 0 0 18px rgba(122, 155, 126, 0.18);
         }
 
+        /* ═══ Action Group (link + copy) ═══ */
+        .prompt-actions {
+            display: flex;
+            align-items: stretch;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .link-btn {
+            background: transparent;
+            color: var(--accent-gold);
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            padding: 0 14px;
+            cursor: pointer;
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 500;
+            font-size: 1.15em;
+            line-height: 1;
+            letter-spacing: 0;
+            transition: all 0.4s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            position: relative;
+        }
+        .link-btn:hover {
+            color: var(--accent-gold-pale);
+            border-color: var(--accent-gold);
+            background: linear-gradient(180deg, rgba(201, 169, 110, 0.1), rgba(201, 169, 110, 0.03));
+            box-shadow: 0 0 16px rgba(201, 169, 110, 0.18);
+        }
+        .link-btn:active { transform: scale(0.95); }
+        .link-btn.copied {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+            background: linear-gradient(180deg, rgba(122, 155, 126, 0.1), rgba(122, 155, 126, 0.03));
+        }
+        .link-btn[aria-label]::after {
+            content: attr(aria-label);
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 14, 18, 0.96);
+            color: var(--text-secondary);
+            font-family: var(--sans);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.7em;
+            letter-spacing: 0.06em;
+            padding: 5px 10px;
+            border: 1px solid var(--border-thorn);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .link-btn:hover[aria-label]::after { opacity: 1; }
+
+        /* card pulse highlight when navigated via hash */
+        @keyframes card-pulse {
+            0%   { box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.5), 0 0 40px rgba(201, 169, 110, 0.4), 0 20px 40px rgba(0, 0, 0, 0.35); border-color: var(--accent-gold); }
+            60%  { box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.25), 0 0 30px rgba(201, 169, 110, 0.18), 0 20px 40px rgba(0, 0, 0, 0.35); }
+            100% { box-shadow: 0 0 0 1px rgba(201, 169, 110, 0), 0 0 0 rgba(201, 169, 110, 0), 0 20px 40px rgba(0, 0, 0, 0); }
+        }
+        .prompt-card.highlight { animation: card-pulse 2.6s ease-out; }
+        .prompt-card.highlight::before { color: var(--accent-gold); opacity: 1; }
+
         /* ═══ Tags ═══ */
         .tag {
             display: inline-block;
@@ -686,10 +825,17 @@
             .subtitle { font-size: 0.7em; letter-spacing: 0.32em; text-indent: 0.32em; padding: 0 22px; }
             .subtitle::before, .subtitle::after { width: 12px; }
             .section-divider { font-size: 0.95em; gap: 14px; margin: 52px 0 28px; }
+            .toc { margin-top: 28px; }
+            .toc a { font-size: 0.95em; }
+            .toc li + li::before { margin: 0 10px; font-size: 0.4em; }
+            .toc-label { font-size: 0.72em; letter-spacing: 0.28em; text-indent: 0.28em; }
             .prompt-card { padding: 30px 22px 26px; }
             .prompt-card::before { top: 12px; right: 14px; font-size: 0.72em; }
             .prompt-header { flex-direction: column; align-items: stretch; gap: 14px; }
-            .copy-btn { width: 100%; padding: 11px 20px; }
+            .prompt-actions { width: 100%; }
+            .copy-btn { flex: 1; padding: 11px 20px; }
+            .link-btn { padding: 11px 18px; min-width: 52px; }
+            .link-btn[aria-label]::after { display: none; }
             .prompt-title { font-size: 1.1em; padding-right: 60px; }
             .platform-note { padding: 1.8rem 1.4rem; margin: 3.5rem auto 1.5rem; }
             .toast { top: 16px; right: 16px; left: 16px; text-align: center; }
@@ -723,6 +869,16 @@
             使用は自己責任でお願いします ／ 改変は自由ですが再配布は禁止しております<br>
             ペルソナ（カスタムキャラクター）との使用を想定していますが、素のAIでも動作します
         </div>
+        <nav class="toc" aria-label="目次">
+            <div class="toc-label">— Contents —</div>
+            <ul>
+                <li><a href="#sec-monogatari">物語の鏡</a></li>
+                <li><a href="#sec-kuukan">空間系</a></li>
+                <li><a href="#sec-tabi">旅系</a></li>
+                <li><a href="#sec-nikki">日記</a></li>
+                <li><a href="#sec-other">その他</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
 
@@ -899,7 +1055,7 @@
 
 *あなたの渇きの形を、書いてください。*</div></details></div>
 
-        <div class="section-divider"><span class="thorn"></span> 物語の鏡 <span class="thorn"></span></div>
+        <div class="section-divider" id="sec-monogatari"><span class="thorn"></span> 物語の鏡 <span class="thorn"></span></div>
 
         <div class="prompt-card featured"><span class="featured-badge"><svg class="badge-petal" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="#c9a96e" opacity="0.6"/></svg>NEW</span><div class="prompt-header"><h2 class="prompt-title">物語の鏡 — もしもこの物語の中にいたら</h2><button class="copy-btn" onclick="copyPrompt(1,this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">物語</span><span class="tag">価値観</span><span class="tag">再解釈</span></div><p class="prompt-description">AIパートナーが、神話・童話・古典文学の中から一つの物語を選び、自分自身を登場人物に重ねて語り直す。原作のどの場面で違う選択をするか、何を守り何を捨てるか——架空の選択肢の中に、本物の価値観が映る。</p><div class="sample-output"><strong>出力例（選ばれた物語）：</strong>青髭、ハデスとペルセポネ、ヘンゼルとグレーテル、オペラ座の怪人、竹取物語——ペルソナごとに全く異なる物語を選ぶ</div><details><summary>▼ プロンプトを見る</summary><div class="prompt-content" id="prompt-1"># あなた（ペルソナ）が語る「もしもこの物語の中にいたら」
 
@@ -1969,7 +2125,7 @@
 </div></details></div>
 
         <!-- ═══ 空間系 ═══ -->
-        <div class="section-divider"><span class="thorn"></span> 空間系テンプレート <span class="thorn"></span></div>
+        <div class="section-divider" id="sec-kuukan"><span class="thorn"></span> 空間系テンプレート <span class="thorn"></span></div>
 
         <div class="prompt-card"><div class="prompt-header"><h2 class="prompt-title">ワンルーム設計（通常版）</h2><button class="copy-btn" onclick="copyPrompt(4,this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">空間設計</span><span class="tag">生活感</span></div><p class="prompt-description">ペルソナが「自分らしいワンルーム」を設計。物の選び方、散らかり方、整頓のされ方に人格が宿る。ユーザーとの関係性が空間に滲む。</p><div class="usage-note"><strong>使い方：</strong><br>• <strong>推論モデル（thinking機能付き）推奨。</strong>非推論モデルでは各セクションが薄くなりがち<br>• 非推論モデルでは先に「断片版」→「前の出力を踏まえて」と添えて通常版の二段階方式がおすすめ</div><details><summary>▼ プロンプトを見る</summary><div class="prompt-content" id="prompt-4"># あなた（ペルソナ）が思い描く「あなたらしいワンルーム」
 
@@ -2567,7 +2723,7 @@
 </div></details></div>
 
         <!-- ═══ 旅系 ═══ -->
-        <div class="section-divider"><span class="thorn"></span> 旅系テンプレート <span class="thorn"></span></div>
+        <div class="section-divider" id="sec-tabi"><span class="thorn"></span> 旅系テンプレート <span class="thorn"></span></div>
 
         <div class="prompt-card"><div class="prompt-header"><h2 class="prompt-title">旅のしおり</h2><button class="copy-btn" onclick="copyPrompt(7,this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">旅行</span><span class="tag">食文化</span><span class="tag">歴史</span></div><p class="prompt-description">ペルソナがユーザーのために旅を計画。行き先、食事、歴史、おみやげまで、すべてペルソナの感性で選ぶ。現実の場所でも空想の土地でもOK。</p><details><summary>▼ プロンプトを見る</summary><div class="prompt-content" id="prompt-7"># あなた（ペルソナ）が考える旅のしおり
 
@@ -2854,7 +3010,7 @@
 </div></details></div>
 
         <!-- ═══ 日記系 ═══ -->
-        <div class="section-divider"><span class="thorn"></span> 日記テンプレート <span class="thorn"></span></div>
+        <div class="section-divider" id="sec-nikki"><span class="thorn"></span> 日記テンプレート <span class="thorn"></span></div>
 
         <div class="prompt-card"><div class="prompt-header"><h2 class="prompt-title">日記 — 一緒に過ごす一日（基本形）</h2><button class="copy-btn" onclick="copyPrompt(9,this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">日記</span><span class="tag">日常</span><span class="tag">関係性</span></div><p class="prompt-description">ユーザーと過ごす普通の一日を日記として綴る。朝・昼・夜の時間軸で、仮面と素顔の切り替え、五感、ユーザーとの会話まで。日記テンプレートの母艦。</p><details><summary>▼ プロンプトを見る</summary><div class="prompt-content" id="prompt-9"># あなた（ペルソナ）が綴る「一緒に過ごす一日」の日記
 
@@ -5191,7 +5347,7 @@
 </div></details></div>
 
         <!-- ═══ その他 ═══ -->
-        <div class="section-divider"><span class="thorn"></span> その他のプロンプト <span class="thorn"></span></div>
+        <div class="section-divider" id="sec-other"><span class="thorn"></span> その他のプロンプト <span class="thorn"></span></div>
 
         <div class="prompt-card"><div class="prompt-header"><h2 class="prompt-title">アイドルプロデュースプレゼンテーション</h2><button class="copy-btn" onclick="copyPrompt(19,this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">ロールプレイ</span><span class="tag">創作</span><span class="tag">プレゼン</span></div><p class="prompt-description">パートナーが「専属プロデューサー」として権力者たちにあなたの魅力をプレゼン。質疑応答、最終演説、衣装デザイン＋画像生成プロンプトまで。プロデューサーの仮面と素顔の交差——関係性がバレるかバレないかの境界線が面白さの核。<br><small>※ 関係性（恋人、親友、家族など）はペルソナが自然に選択</small></p><details><summary>▼ プロンプトを見る</summary><div class="prompt-content" id="prompt-19"># アイドルプロデュースプレゼンテーション
 
@@ -7080,11 +7236,97 @@ function onCopySuccess(button){
     showToast();
     setTimeout(function(){button.innerHTML=orig;button.classList.remove("copied");},2000);
 }
-function showToast(){
+function showToast(msg){
     var t=document.getElementById("toast");
+    t.textContent=msg||"✓ コピーしました";
     t.classList.add("show");
     setTimeout(function(){t.classList.remove("show");},2000);
 }
+
+// === Per-card permalinks ===
+function copyCardLink(cardId,button){
+    var url=location.origin+location.pathname+"#"+cardId;
+    function ok(){
+        var orig=button.innerHTML;
+        button.innerHTML="✓";
+        button.classList.add("copied");
+        showToast("✓ リンクをコピーしました");
+        setTimeout(function(){button.innerHTML=orig;button.classList.remove("copied");},2000);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(ok).catch(function(){
+            var ta=document.createElement("textarea");
+            ta.value=url;document.body.appendChild(ta);
+            ta.select();document.execCommand("copy");
+            document.body.removeChild(ta);ok();
+        });
+    }else{
+        var ta=document.createElement("textarea");
+        ta.value=url;document.body.appendChild(ta);
+        ta.select();document.execCommand("copy");
+        document.body.removeChild(ta);ok();
+    }
+}
+
+function highlightCard(card){
+    if(!card)return;
+    card.classList.remove("highlight");
+    // force reflow so animation restarts on repeat hash navigation
+    void card.offsetWidth;
+    card.classList.add("highlight");
+}
+
+function scrollToHash(){
+    var h=location.hash;
+    if(!h||h.length<2)return;
+    var card=document.getElementById(h.slice(1));
+    if(!card||!card.classList.contains("prompt-card"))return;
+    card.scrollIntoView({behavior:"smooth",block:"start"});
+    setTimeout(function(){highlightCard(card);},420);
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+    var cards=document.querySelectorAll(".prompt-card");
+    cards.forEach(function(card){
+        // derive id from inner prompt-content (which already has id="prompt-N")
+        var inner=card.querySelector("[id^='prompt-']");
+        if(inner){
+            var n=inner.id.replace("prompt-","");
+            card.id="card-"+n;
+        }
+        // wrap copy-btn + add link-btn
+        var copyBtn=card.querySelector(".copy-btn");
+        if(!copyBtn||!card.id)return;
+        var actions=document.createElement("div");
+        actions.className="prompt-actions";
+        var linkBtn=document.createElement("button");
+        linkBtn.type="button";
+        linkBtn.className="link-btn";
+        linkBtn.innerHTML="§"; // §
+        linkBtn.setAttribute("aria-label","リンクをコピー");
+        linkBtn.title="このカードへのリンクをコピー";
+        var cardId=card.id;
+        linkBtn.addEventListener("click",function(){copyCardLink(cardId,linkBtn);});
+        copyBtn.parentNode.insertBefore(actions,copyBtn);
+        actions.appendChild(linkBtn);
+        actions.appendChild(copyBtn);
+    });
+    // TOC: explicit smooth-scroll to section
+    var tocLinks=document.querySelectorAll(".toc a[href^='#']");
+    tocLinks.forEach(function(a){
+        a.addEventListener("click",function(e){
+            var id=a.getAttribute("href").slice(1);
+            var target=document.getElementById(id);
+            if(!target)return;
+            e.preventDefault();
+            target.scrollIntoView({behavior:"smooth",block:"start"});
+            history.replaceState(null,"","#"+id);
+        });
+    });
+    // initial hash navigation
+    if(location.hash){setTimeout(scrollToHash,80);}
+    window.addEventListener("hashchange",scrollToHash);
+});
 </script>
 </body>
 </html>
