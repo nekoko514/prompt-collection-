@@ -1,0 +1,113 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="centerGlow" cx="50%" cy="46%" r="62%">
+      <stop offset="0%" stop-color="#2b121f"/>
+      <stop offset="42%" stop-color="#130912"/>
+      <stop offset="82%" stop-color="#07040a"/>
+      <stop offset="100%" stop-color="#030205"/>
+    </radialGradient>
+    <linearGradient id="ivoryText" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2eadb"/>
+      <stop offset="56%" stop-color="#e8e0d4"/>
+      <stop offset="100%" stop-color="#bfb3a2"/>
+    </linearGradient>
+    <linearGradient id="goldRule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#caa86e" stop-opacity="0"/>
+      <stop offset="16%" stop-color="#8a3a4a" stop-opacity="0.34"/>
+      <stop offset="50%" stop-color="#e2c993" stop-opacity="0.82"/>
+      <stop offset="84%" stop-color="#8a3a4a" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#caa86e" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="roseStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dca4ad"/>
+      <stop offset="54%" stop-color="#c4727e"/>
+      <stop offset="100%" stop-color="#8a3a4a"/>
+    </linearGradient>
+    <filter id="softRoseGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.77  0 0.42 0 0 0.28  0 0 0.5 0 0.36  0 0 0 0.45 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="paperNoise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" seed="514"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.055"/>
+      </feComponentTransfer>
+    </filter>
+    <pattern id="pinstripe" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M0 0H4" stroke="#ffffff" stroke-opacity="0.018"/>
+      <path d="M0 0V4" stroke="#000000" stroke-opacity="0.12"/>
+    </pattern>
+    <style>
+      .serif {
+        font-family: "Cormorant Garamond", "Cormorant SC", Georgia, "Times New Roman", serif;
+      }
+      .jp {
+        font-family: "Yu Mincho", "Hiragino Mincho ProN", "BIZ UDPMincho", serif;
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="#06040a"/>
+  <rect width="1200" height="630" fill="url(#centerGlow)"/>
+  <rect width="1200" height="630" fill="url(#pinstripe)" opacity="0.62"/>
+  <rect width="1200" height="630" filter="url(#paperNoise)" opacity="0.75"/>
+
+  <ellipse cx="600" cy="304" rx="500" ry="238" fill="#7b2b46" opacity="0.06"/>
+  <ellipse cx="600" cy="310" rx="395" ry="178" fill="#c4727e" opacity="0.025"/>
+  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#000000" stroke-opacity="0.42" stroke-width="44"/>
+
+  <g opacity="0.54">
+    <rect x="66" y="54" width="1068" height="522" fill="none" stroke="#caa86e" stroke-opacity="0.17"/>
+    <rect x="84" y="72" width="1032" height="486" fill="none" stroke="#8a3a4a" stroke-opacity="0.18"/>
+    <path d="M96 106V80H122 M1078 80H1104V106 M1104 524V550H1078 M122 550H96V524"
+          fill="none" stroke="#e2c993" stroke-width="1.2" stroke-opacity="0.58"/>
+    <path d="M124 128V104H148 M1052 104H1076V128 M1076 502V526H1052 M148 526H124V502"
+          fill="none" stroke="#c4727e" stroke-width="0.8" stroke-opacity="0.28"/>
+  </g>
+
+  <g transform="translate(600 150)" filter="url(#softRoseGlow)" opacity="0.82">
+    <path d="M0-58C-19-33-48-16-48 17c0 28 20 48 48 62c28-14 48-34 48-62c0-33-29-50-48-75Z"
+          fill="none" stroke="url(#roseStroke)" stroke-width="1.65" stroke-linejoin="round"/>
+    <path d="M0-42C-14-22-31-9-31 15c0 21 13 35 31 46c18-11 31-25 31-46c0-24-17-37-31-57Z"
+          fill="none" stroke="#dca4ad" stroke-width="1.05" stroke-opacity="0.62" stroke-linejoin="round"/>
+    <path d="M0-25C-8-12-16 0-16 15c0 13 6 23 16 30c10-7 16-17 16-30c0-15-8-27-16-40Z"
+          fill="none" stroke="#c4727e" stroke-width="0.9" stroke-opacity="0.55" stroke-linejoin="round"/>
+    <path d="M-48 17C-68 21-84 34-95 54M48 17C68 21 84 34 95 54"
+          fill="none" stroke="#8a3a4a" stroke-width="0.85" stroke-opacity="0.46" stroke-linecap="round"/>
+    <path d="M0 79V104" stroke="#caa86e" stroke-width="0.9" stroke-opacity="0.52" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.86">
+    <line x1="242" y1="261" x2="543" y2="261" stroke="url(#goldRule)" stroke-width="1"/>
+    <line x1="657" y1="261" x2="958" y2="261" stroke="url(#goldRule)" stroke-width="1"/>
+    <path d="M590 261l10-10l10 10l-10 10Z" fill="none" stroke="#caa86e" stroke-opacity="0.7" stroke-width="1"/>
+    <circle cx="600" cy="261" r="2.4" fill="#e2c993" opacity="0.72"/>
+  </g>
+
+  <text class="serif" x="600" y="341" text-anchor="middle"
+        font-size="68" font-weight="500" letter-spacing="13"
+        fill="url(#ivoryText)">PROMPT COLLECTION</text>
+  <text class="jp" x="600" y="392" text-anchor="middle"
+        font-size="25" font-weight="400" letter-spacing="14"
+        fill="#dca4ad" opacity="0.86">プロンプト置き場</text>
+
+  <g opacity="0.72">
+    <line x1="292" y1="430" x2="908" y2="430" stroke="url(#goldRule)" stroke-width="1"/>
+    <path d="M584 430c5-6 11-9 16-9s11 3 16 9c-5 6-11 9-16 9s-11-3-16-9Z"
+          fill="none" stroke="#caa86e" stroke-opacity="0.56" stroke-width="0.8"/>
+  </g>
+
+  <text class="serif" x="600" y="486" text-anchor="middle"
+        font-size="24" font-style="italic" letter-spacing="8"
+        fill="#caa86e" opacity="0.66">nekoko</text>
+
+  <g opacity="0.22" stroke="#caa86e" stroke-width="0.75" fill="none">
+    <path d="M205 304c52-42 88-42 140 0M855 304c52-42 88-42 140 0"/>
+    <path d="M250 284c-14 14-18 27-12 40M950 284c14 14 18 27 12 40"/>
+  </g>
+</svg>
