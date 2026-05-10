@@ -7263,8 +7263,8 @@ function showToast(msg){
 
 // === Per-card permalinks ===
 function copyCardLink(cardId,button){
-    // ?v=1 to dodge X (Twitter) OGP cache for per-card hash URLs
-    var url=location.origin+location.pathname+"?v=1#"+cardId;
+    // ?v=N to dodge X (Twitter) OGP cache; bump N when ogp image changes
+    var url=location.origin+location.pathname+"?v=2#"+cardId;
     function ok(){
         var orig=button.innerHTML;
         button.innerHTML="✓";
