@@ -290,6 +290,32 @@
         .toc a:hover::after {
             transform: scaleX(1);
         }
+        .button-legend {
+            margin: 22px auto 0;
+            max-width: 560px;
+            text-align: center;
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 0.82em;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+            line-height: 1.85;
+            opacity: 0.82;
+        }
+        .button-legend .legend-mark {
+            font-style: normal;
+            color: var(--accent-rose-pale);
+            font-family: var(--serif-sc);
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            margin-right: 4px;
+        }
+        .button-legend .legend-sep {
+            color: var(--accent-gold);
+            opacity: 0.5;
+            margin: 0 10px;
+        }
 
         /* ═══ Section Dividers ═══ */
         .section-divider {
@@ -847,6 +873,8 @@
             .toc a { font-size: 0.95em; }
             .toc li + li::before { margin: 0 10px; font-size: 0.4em; }
             .toc-label { font-size: 0.72em; letter-spacing: 0.28em; text-indent: 0.28em; }
+            .button-legend { font-size: 0.78em; margin-top: 18px; line-height: 2; }
+            .button-legend .legend-sep { display: block; visibility: hidden; height: 4px; line-height: 1; margin: 0; }
             .prompt-card { padding: 30px 22px 26px; }
             .prompt-card::before { top: 12px; right: 14px; font-size: 0.72em; }
             .prompt-header { flex-direction: column; align-items: stretch; gap: 14px; }
@@ -897,6 +925,11 @@
                 <li><a href="#sec-other">その他</a></li>
             </ul>
         </nav>
+        <p class="button-legend">
+            <span class="legend-mark">§</span> このお題のリンクをコピー
+            <span class="legend-sep">·</span>
+            <span class="legend-mark">COPY</span> プロンプト本文をコピー
+        </p>
     </header>
     <main>
 
