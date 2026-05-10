@@ -1,0 +1,54 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="46%" r="62%">
+      <stop offset="0%" stop-color="#2b121f"/>
+      <stop offset="42%" stop-color="#130912"/>
+      <stop offset="82%" stop-color="#07040a"/>
+      <stop offset="100%" stop-color="#030205"/>
+    </radialGradient>
+    <linearGradient id="roseStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dca4ad"/>
+      <stop offset="54%" stop-color="#c4727e"/>
+      <stop offset="100%" stop-color="#8a3a4a"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" fill="#06040a"/>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  
+
+  <!-- Corner brackets -->
+  <g opacity="0.6" stroke="#caa86e" stroke-width="2.56" stroke-linecap="square" fill="none">
+    <path d="M98.16 126.0128V98.16H126.0128
+             M385.98720000000003 98.16H413.84000000000003V126.0128
+             M413.84000000000003 385.98720000000003V413.84000000000003H385.98720000000003
+             M126.0128 413.84000000000003H98.16V385.98720000000003"/>
+  </g>
+
+  <!-- Rose -->
+  <g transform="translate(256 248.7182222222222) scale(0.9102222222222223)" filter="url(#softGlow)">
+    <path d="M0-110C-36-62-92-32-92 32c0 56 38 92 92 118c54-26 92-62 92-118c0-64-56-94-92-142Z"
+          fill="none" stroke="url(#roseStroke)" stroke-width="3.6" stroke-linejoin="round"/>
+    <path d="M0-78C-26-44-58-18-58 30c0 40 24 66 58 86c34-20 58-46 58-86c0-48-32-74-58-108Z"
+          fill="none" stroke="#dca4ad" stroke-width="2.2" stroke-opacity="0.62" stroke-linejoin="round"/>
+    <path d="M0-46C-14-22-30 0-30 28c0 24 12 42 30 56c18-14 30-32 30-56c0-28-16-50-30-74Z"
+          fill="none" stroke="#c4727e" stroke-width="1.6" stroke-opacity="0.6" stroke-linejoin="round"/>
+    <!-- stem and leaves -->
+    <path d="M-92 32C-118 38-138 54-152 78M92 32C118 38 138 54 152 78"
+          fill="none" stroke="#8a3a4a" stroke-width="1.6" stroke-opacity="0.55" stroke-linecap="round"/>
+    <path d="M0 150v52" stroke="#caa86e" stroke-width="1.6" stroke-opacity="0.55" stroke-linecap="round"/>
+  </g>
+
+  <!-- Bottom hairline ornament -->
+  <g opacity="0.62">
+    <line x1="197.01760000000002" y1="357.5808" x2="314.9824" y2="357.5808" stroke="#caa86e" stroke-opacity="0.4" stroke-width="1"/>
+    <path d="M250 357.5808l6-6l6 6l-6 6Z" fill="none" stroke="#caa86e" stroke-opacity="0.55" stroke-width="0.8"/>
+  </g>
+</svg>

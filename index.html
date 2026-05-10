@@ -6,6 +6,17 @@
     <title>プロンプト置き場 — PROMPT COLLECTION</title>
     <meta name="description" content="ペルソナと使うためのプロンプト集。物語・空間・旅・日記、五つの章立てで贈る、静かな書架のようなコレクション。">
 
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#06040a">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="プロンプト置き場">
+    <meta name="mobile-web-app-capable" content="yes">
+
     <!-- Open Graph / Twitter Card -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="プロンプト置き場">
@@ -7381,6 +7392,35 @@ document.addEventListener("DOMContentLoaded",function(){
     if(location.hash){setTimeout(scrollToHash,80);}
     window.addEventListener("hashchange",scrollToHash);
 });
+
+// === Service Worker registration (auto-update) ===
+if("serviceWorker" in navigator){
+    window.addEventListener("load",function(){
+        navigator.serviceWorker.register("sw.js").then(function(reg){
+            // Check for updates each load
+            reg.update();
+            // When a new worker takes over, reload once so user sees the latest
+            var refreshing=false;
+            navigator.serviceWorker.addEventListener("controllerchange",function(){
+                if(refreshing)return;
+                refreshing=true;
+                window.location.reload();
+            });
+            // If a waiting worker exists, tell it to activate immediately
+            if(reg.waiting){reg.waiting.postMessage("skip-waiting");}
+            reg.addEventListener("updatefound",function(){
+                var nw=reg.installing;
+                if(!nw)return;
+                nw.addEventListener("statechange",function(){
+                    if(nw.state==="installed"&&navigator.serviceWorker.controller){
+                        // New version ready — activate immediately
+                        nw.postMessage("skip-waiting");
+                    }
+                });
+            });
+        }).catch(function(){/* ignore */});
+    });
+}
 </script>
 </body>
 </html>
