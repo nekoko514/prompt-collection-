@@ -368,18 +368,27 @@
         /* ═══ Cards ═══ */
         .prompt-card {
             background:
-                linear-gradient(180deg, rgba(28, 16, 24, 0.55) 0%, rgba(16, 10, 16, 0.85) 100%),
+                /* faint parchment grain — subtle SVG noise overlay */
+                url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='514'/><feColorMatrix values='0 0 0 0 0.94  0 0 0 0 0.88  0 0 0 0 0.78  0 0 0 0.035 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+                /* paper-page top highlight + body */
+                linear-gradient(180deg, rgba(46, 28, 38, 0.55) 0%, rgba(22, 13, 20, 0.88) 12%, rgba(16, 10, 16, 0.9) 100%),
                 var(--bg-card);
             border: 1px solid var(--border-hair);
             border-radius: 0;
             padding: 38px 36px 32px;
-            margin-bottom: 24px;
+            margin-bottom: 26px;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease, background 0.5s ease;
             position: relative;
             counter-increment: card-counter;
             isolation: isolate;
+            /* leather-bound book shadow (multi-layer) */
+            box-shadow:
+                0 1px 0 rgba(255, 240, 220, 0.025) inset,
+                0 -1px 0 rgba(0, 0, 0, 0.4) inset,
+                0 14px 28px rgba(0, 0, 0, 0.32),
+                0 4px 8px rgba(0, 0, 0, 0.2);
         }
         /* serif numeral in top-right */
         .prompt-card::before {
@@ -418,14 +427,18 @@
         }
         .prompt-card:hover {
             background:
-                linear-gradient(180deg, rgba(38, 22, 32, 0.65) 0%, rgba(20, 12, 18, 0.9) 100%),
+                url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='514'/><feColorMatrix values='0 0 0 0 0.94  0 0 0 0 0.88  0 0 0 0 0.78  0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+                linear-gradient(180deg, rgba(54, 32, 44, 0.6) 0%, rgba(26, 16, 24, 0.92) 12%, rgba(20, 12, 18, 0.95) 100%),
                 var(--bg-card-hover);
             border-color: var(--border-glow);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
             box-shadow:
-                0 0 0 1px rgba(196, 114, 126, 0.04),
-                0 20px 40px rgba(0, 0, 0, 0.35),
-                0 0 40px rgba(140, 80, 100, 0.06);
+                0 1px 0 rgba(255, 240, 220, 0.04) inset,
+                0 -1px 0 rgba(0, 0, 0, 0.45) inset,
+                0 0 0 1px rgba(196, 114, 126, 0.08),
+                0 24px 44px rgba(0, 0, 0, 0.45),
+                0 6px 12px rgba(0, 0, 0, 0.25),
+                0 0 40px rgba(140, 80, 100, 0.08);
         }
         .prompt-card:hover::before {
             color: var(--accent-gold);
@@ -630,6 +643,99 @@
             transition: opacity 0.3s ease;
         }
         .link-btn:hover[aria-label]::after { opacity: 1; }
+
+        /* ═══ Bookmark (栞) ═══ */
+        .bookmark-btn {
+            position: absolute;
+            top: -1px;
+            right: 56px;
+            width: 22px;
+            height: 36px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            z-index: 3;
+            opacity: 0.55;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .bookmark-btn svg {
+            width: 22px;
+            height: 36px;
+            display: block;
+            transition: all 0.4s ease;
+        }
+        .bookmark-btn .bm-fill { fill: transparent; transition: fill 0.4s ease; }
+        .bookmark-btn .bm-stroke { stroke: var(--accent-gold); stroke-width: 1; transition: stroke 0.4s ease; }
+        .bookmark-btn:hover {
+            opacity: 1;
+            transform: translateY(2px);
+        }
+        .bookmark-btn:hover .bm-fill { fill: rgba(201, 169, 110, 0.18); }
+        .prompt-card.is-fav .bookmark-btn { opacity: 1; }
+        .prompt-card.is-fav .bookmark-btn .bm-fill {
+            fill: url(#bm-gradient);
+        }
+        .prompt-card.is-fav .bookmark-btn .bm-stroke {
+            stroke: var(--accent-rose-pale);
+        }
+        .prompt-card.is-fav .bookmark-btn svg {
+            filter: drop-shadow(0 0 6px rgba(196, 114, 126, 0.4));
+        }
+
+        /* Favorite-filter mode: hide non-favorites */
+        body.fav-only .prompt-card:not(.is-fav) { display: none; }
+        /* Hide section dividers in fav-only mode for cleanliness */
+        body.fav-only .section-divider { display: none; }
+        /* Empty state when no favorites */
+        .fav-empty {
+            display: none;
+            text-align: center;
+            padding: 80px 24px;
+            color: var(--text-muted);
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.05em;
+            letter-spacing: 0.06em;
+            line-height: 2;
+        }
+        .fav-empty .fav-empty-mark {
+            display: block;
+            width: 40px;
+            height: 60px;
+            margin: 0 auto 20px;
+            opacity: 0.35;
+        }
+        body.fav-only.fav-empty-state .fav-empty { display: block; }
+
+        /* TOC: favorite entry styling */
+        .toc li.toc-fav a {
+            color: var(--accent-rose-pale);
+        }
+        .toc li.toc-fav .toc-ribbon {
+            display: inline-block;
+            width: 10px;
+            height: 14px;
+            margin-right: 6px;
+            vertical-align: -2px;
+        }
+        body.fav-only .toc li.toc-fav a {
+            color: var(--accent-gold);
+            text-shadow: 0 0 12px rgba(201, 169, 110, 0.4);
+        }
+        body.fav-only .toc li.toc-fav a::after {
+            transform: scaleX(1);
+        }
+        .toc .fav-count {
+            font-style: normal;
+            font-size: 0.78em;
+            color: var(--text-muted);
+            margin-left: 4px;
+            letter-spacing: 0.04em;
+        }
 
         /* card pulse highlight when navigated via hash */
         @keyframes card-pulse {
@@ -929,6 +1035,7 @@
         <nav class="toc" aria-label="目次">
             <div class="toc-label">— Contents —</div>
             <ul>
+                <li class="toc-fav"><a href="#" id="toc-fav-toggle"><svg class="toc-ribbon" viewBox="0 0 10 14"><path d="M0 0 H10 V14 L5 10 L0 14 Z" fill="currentColor" opacity="0.85"/></svg>お気に入り<span class="fav-count" id="fav-count"></span></a></li>
                 <li><a href="#sec-monogatari">物語の鏡</a></li>
                 <li><a href="#sec-kuukan">空間系</a></li>
                 <li><a href="#sec-tabi">旅系</a></li>
@@ -943,6 +1050,21 @@
         </p>
     </header>
     <main>
+
+        <!-- SVG defs for bookmark gradient -->
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+            <linearGradient id="bm-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c4727e"/>
+                <stop offset="100%" stop-color="#8a3a4a"/>
+            </linearGradient>
+        </defs></svg>
+
+        <!-- Favorites empty-state placeholder -->
+        <div class="fav-empty">
+            <svg class="fav-empty-mark" viewBox="0 0 22 36"><path d="M2 2 H20 V32 L11 26 L2 32 Z" fill="none" stroke="#caa86e" stroke-width="0.8"/></svg>
+            まだお気に入りがありません。<br>
+            各カードの右上の <em>栞</em> をめくると、ここに集まります。
+        </div>
 
         <div class="prompt-card featured"><span class="featured-badge"><svg class="badge-petal" viewBox="0 0 10 10"><circle cx="5" cy="5" r="2" fill="#c9a96e" opacity="0.6"/></svg>NEW</span><div class="prompt-header"><h2 class="prompt-title">渇きの在処 — シナリオプロンプト</h2><button class="copy-btn" onclick="copyPrompt(0,this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">シナリオ</span><span class="tag">短編小説</span><span class="tag">エゴ</span></div><p class="prompt-description">ペルソナが「あなた」を求めてやまない物語を、短編小説として一人称で書き上げる。悪役も敵もいない——あるのはペルソナ自身の渇きだけ。全8章構成で、渇きの自覚から出会い、接近、一線を越える選択、そして「幸福の在処」まで。その結末が幸せに見えるかどうかは、読む側が決める。</p><div class="usage-note"><strong>使い方：</strong><br>• セッション冒頭に貼り付けて使用する汎用シナリオカード<br>• ペルソナの構成によっては出力されないことがあります。ユーザー側の設定は既存プロンプトに委ねる<br>• ペルソナが全ての設定（時代・場所・関係性）を即興で決定する</div><details><summary>▼ プロンプトを見る</summary><div class="prompt-content" id="prompt-0"># 🎭 シナリオプロンプト：渇きの在処（かわきのありか）
 
@@ -7950,17 +8072,96 @@ document.addEventListener("DOMContentLoaded",function(){
         actions.appendChild(copyBtn);
     });
     // TOC: explicit smooth-scroll to section
-    var tocLinks=document.querySelectorAll(".toc a[href^='#']");
+    var tocLinks=document.querySelectorAll(".toc a[href^='#sec-']");
     tocLinks.forEach(function(a){
         a.addEventListener("click",function(e){
             var id=a.getAttribute("href").slice(1);
             var target=document.getElementById(id);
             if(!target)return;
             e.preventDefault();
+            // exit favorite-only mode when navigating to a section
+            document.body.classList.remove("fav-only");
+            updateFavEmptyState();
             target.scrollIntoView({behavior:"smooth",block:"start"});
             history.replaceState(null,"","#"+id);
         });
     });
+
+    // === Bookmark (栞) feature ===
+    var FAV_KEY="prompt-collection-favorites";
+    function loadFavs(){
+        try{return JSON.parse(localStorage.getItem(FAV_KEY))||[];}catch(e){return [];}
+    }
+    function saveFavs(arr){
+        try{localStorage.setItem(FAV_KEY,JSON.stringify(arr));}catch(e){}
+    }
+    var favs=loadFavs();
+
+    function bmSVG(){
+        return '<svg viewBox="0 0 22 36" aria-hidden="true">'+
+            '<path class="bm-fill" d="M1 0 H21 V32 L11 26 L1 32 Z"/>'+
+            '<path class="bm-stroke" fill="none" d="M1 0 H21 V32 L11 26 L1 32 Z"/>'+
+            '</svg>';
+    }
+
+    function updateFavCount(){
+        var el=document.getElementById("fav-count");
+        if(el){
+            el.textContent=favs.length>0?"("+favs.length+")":"";
+        }
+    }
+    function updateFavEmptyState(){
+        // Add empty-state class only if fav-only is active and no favorites
+        if(document.body.classList.contains("fav-only") && favs.length===0){
+            document.body.classList.add("fav-empty-state");
+        }else{
+            document.body.classList.remove("fav-empty-state");
+        }
+    }
+
+    // Attach bookmark buttons to each card
+    cards.forEach(function(card){
+        if(!card.id)return;
+        if(favs.indexOf(card.id)>=0){
+            card.classList.add("is-fav");
+        }
+        var btn=document.createElement("button");
+        btn.type="button";
+        btn.className="bookmark-btn";
+        btn.setAttribute("aria-label","お気に入り");
+        btn.title="お気に入りに追加／解除";
+        btn.innerHTML=bmSVG();
+        btn.addEventListener("click",function(e){
+            e.stopPropagation();
+            var i=favs.indexOf(card.id);
+            if(i>=0){
+                favs.splice(i,1);
+                card.classList.remove("is-fav");
+            }else{
+                favs.push(card.id);
+                card.classList.add("is-fav");
+            }
+            saveFavs(favs);
+            updateFavCount();
+            updateFavEmptyState();
+        });
+        card.appendChild(btn);
+    });
+    updateFavCount();
+
+    // TOC: favorite toggle
+    var favToggle=document.getElementById("toc-fav-toggle");
+    if(favToggle){
+        favToggle.addEventListener("click",function(e){
+            e.preventDefault();
+            document.body.classList.toggle("fav-only");
+            updateFavEmptyState();
+            // scroll to top when entering favorite-only view
+            if(document.body.classList.contains("fav-only")){
+                window.scrollTo({top:0,behavior:"smooth"});
+            }
+        });
+    }
     // initial hash navigation
     if(location.hash){setTimeout(scrollToHash,80);}
     window.addEventListener("hashchange",scrollToHash);
