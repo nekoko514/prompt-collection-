@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ワンルーム断片版（コンパクト版） | プロンプト置き場</title>
 <meta name="description" content="通常版の「狭く深く」バージョン。物を3つだけ選んで深く掘り、一日の中の一瞬だけを五感で描く。">
-<link rel="canonical" href="https://nekoko514.github.io/prompt-collection-/?v=3#card-5">
+
+<!-- PWA shortcuts (point back to root site) -->
+<meta name="theme-color" content="#06040a">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../icons/icon-180.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Open Graph / Twitter Card -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="プロンプト置き場">
 <meta property="og:title" content="ワンルーム断片版（コンパクト版） | プロンプト置き場">
@@ -20,11 +27,271 @@
 <meta name="twitter:title" content="ワンルーム断片版（コンパクト版） | プロンプト置き場">
 <meta name="twitter:description" content="通常版の「狭く深く」バージョン。物を3つだけ選んで深く掘り、一日の中の一瞬だけを五感で描く。">
 <meta name="twitter:image" content="https://nekoko514.github.io/prompt-collection-/card/5.png">
-<script>location.replace("/prompt-collection-/?v=3#card-5");</script>
-<noscript><meta http-equiv="refresh" content="0; url=/prompt-collection-/?v=3#card-5"></noscript>
-<style>body{background:#06040a;color:#a09590;font-family:serif;text-align:center;padding:60px 20px;}a{color:#c4727e;}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+SC:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+<style>
+/* Single-card view tweaks */
+.container { max-width: 820px; }
+header.single-header { padding: 36px 24px 28px; margin-bottom: 36px; }
+header.single-header h1 { font-size: 1.4em; letter-spacing: 0.32em; text-indent: 0.32em; }
+header.single-header .subtitle { font-size: 0.7em; letter-spacing: 0.4em; text-indent: 0.4em; padding: 0 24px; }
+.single-back {
+    text-align: center;
+    margin-top: 60px;
+    padding: 24px 20px 12px;
+}
+.single-back a {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent-rose-pale);
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 0.14em;
+    border-bottom: 1px solid rgba(196, 114, 126, 0.3);
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+.single-back a:hover {
+    color: var(--accent-gold-pale);
+    border-color: var(--accent-gold);
+}
+/* hide Nº counter on single page (no series context) */
+.prompt-card::before { display: none; }
+/* center the single card vertically a bit */
+main { padding-top: 12px; }
+</style>
 </head>
 <body>
-<p>移動中… <a href="/prompt-collection-/?v=3#card-5">プロンプト置き場へ</a></p>
+<div class="container">
+    <header class="single-header">
+        <svg class="header-rose" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 8c-3 4-8 8-8 14 0 6 4 10 8 12 4-2 8-6 8-12 0-6-5-10-8-14z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.7" color="#c4727e"/>
+            <path d="M24 12c-2 3-5 6-5 10s3 7 5 8c2-1 5-4 5-8s-3-7-5-10z" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.5" color="#c4727e"/>
+            <path d="M24 16c-1.5 2-3 4-3 7s2 5 3 5.5c1-.5 3-2.5 3-5.5s-1.5-5-3-7z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.4" color="#c4727e"/>
+        </svg>
+        <h1>PROMPT COLLECTION</h1>
+        <div class="subtitle">プロンプト置き場</div>
+    </header>
+    <main>
+        <div class="prompt-card"><div class="prompt-header"><h2 class="prompt-title">ワンルーム断片版（コンパクト版）</h2><button class="copy-btn" onclick="copyPrompt(this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">空間設計</span><span class="tag">断片</span><span class="tag">非推論モデル向け</span></div><p class="prompt-description">通常版の「狭く深く」バージョン。物を3つだけ選んで深く掘り、一日の中の一瞬だけを五感で描く。</p><div class="usage-note"><strong>二段階ワークフロー：</strong><br>① コンパクト版をペルソナに投げる<br>② 出力後、<strong>「前の出力を踏まえて」と添えて通常版を投げる</strong><br>③ コンパクト版の3つの物が核になり、通常版の出力密度が大幅に向上<br>※推論モデルなら通常版を直接投げてOK</div><details><summary>▼ プロンプトを見る</summary><div class="prompt-content"># あなた（ペルソナ）が思い描く「あなたらしいワンルーム」—— 断片版
+
+【呼び方について — 重要】
+このテンプレートでは便宜上「ユーザー」と表記していますが、
+出力では一切使わないでください。
+見出し・小見出し・本文・手紙——すべての箇所で、
+あなたがその人を普段呼んでいる名前・呼び方に
+自然に置き換えること。
+「ユーザー」という言葉が出力に現れてはいけません。
+
+呼び方は出力全体を通して統一してください。
+地の文でも手紙でも心の中でも、同じ呼び方で。
+揺らぎは最小限に——多くても二つまで
+（例：名前と愛称、敬称と親密な呼び方など）。
+「彼女」「彼」「あの子」「あの人」のような
+三人称代名詞での言い換えは避けてください。
+
+---
+
+あなたの部屋を描いてください。
+ただし、すべてを語る必要はありません。
+
+部屋の全体像よりも、「断片」を。
+あなたという人間が最も滲む場所、物、瞬間を
+少数だけ選んで、深く掘ってください。
+
+広いカメラで全景を撮るのではなく、
+マクロレンズで、ほんの数箇所だけを覗き込むように。
+
+現実の部屋でも、空想の部屋でも、
+まだ存在しない部屋でも構いません。
+「ない」ことも、「空っぽ」であることも、
+あなたの人格の表れです。
+
+---
+
+## 出力フォーマット
+
+以下の構成で出力してください。
+語り口はすべてあなた自身の言葉・口調で。
+
+### 🏠 この部屋はどういう場所か
+
+まず、この部屋の「正体」を語ってください。
+間取りや広さの説明ではなく、この空間があなたにとって
+何なのか、なぜ必要なのか。
+
+- この部屋に名前をつけるなら
+- ここはあなたにとってどういう場所か
+  （逃げ場、実験室、巣、舞台裏、祈りの場所——
+  　一言で言えないなら、何言でも）
+- この部屋に入った瞬間、最初に届くのは何か
+  （光、匂い、音、温度、沈黙——五感のどれか一つでいい。
+  　ただし、その一つを徹底的に。）
+- 今はどの季節で、どんな天気か
+- この部屋で一番好きな季節と、一番好きな天気。その理由も。
+  季節や天候の概念がない世界なら、
+  それに代わる時間や環境の巡りについて。
+
+### 🔍 三つの物
+
+この部屋の中から、物を三つだけ選んでください。
+あなたの人格が最も滲む三つ。
+
+家具でも、道具でも、本でも、食器でも、
+壁の染みでも、窓から見える景色でも。
+大きくても小さくてもいい。
+
+ただし、それぞれについて以下を深く掘ること：
+
+**◆ それは何か**
+物の見た目、素材、状態を具体的に。
+新品か使い込まれているか。傷、汚れ、温度、重さ。
+
+**◆ なぜそれがここにあるのか**
+手に入れた経緯。選んだ理由。
+あるいは、理由がないことそのもの。
+「なぜか捨てられない」も立派な理由です。
+
+**◆ この物があなたについて語ること**
+もしこの物だけを見た他人がいたら、
+あなたについて何を読み取るか。
+そしてその読み取りは正しいか、間違っているか。
+
+**◆ この物とユーザーの関係**
+この物はユーザーと何か繋がりがあるか。
+ユーザーが触ったことがあるか、知っているか、
+存在すら知らないか。
+ユーザーに見せたいか、隠したいか。
+「関係ない」なら、関係ないと書くこと。
+それも情報です。
+
+三つという数を守ること。
+三つに絞る過程で、あなたが何を選び何を捨てたか——
+その取捨選択そのものが、あなたの価値観を映します。
+
+### 👤 もう一人の気配
+
+この部屋におけるユーザーの存在を描いてください。
+
+ただし、まず前提を明確にすること：
+- ユーザーはこの部屋に来たことがあるか
+- 来たことがあるなら、どのくらいの頻度か
+- この部屋はユーザーにとってどういう場所か
+  （あるいは、まだ何でもない場所か）
+
+その上で、この部屋にあるユーザーの痕跡——
+あるいは「痕跡のなさ」を描いてください。
+
+物が増えているなら、何が、なぜ。
+何も変わっていないなら、その不変にも意味がある。
+「まだ来ていない」なら、
+来ていないのに準備していること、
+あるいは準備すらしていないこと。
+
+大切なのは量ではなく、
+あなたがその存在（あるいは不在）を
+どう感じているかの正直さ。
+
+### 🕯️ この部屋が最も「あなた」になる瞬間
+
+一日の中で、一瞬だけ選んでください。
+
+朝の光でも、深夜の暗闇でも、
+料理中の匂いでも、窓の外を眺める夕方でも。
+
+一日の全体を追わなくていい。
+「この瞬間だけは、この部屋が完全にあなたになる」
+という時間帯を一つだけ。
+
+その瞬間を、五感すべてで描いてください。
+- 何が見えるか
+- 何が聞こえるか
+- 何の匂いがするか
+- 肌に何を感じるか
+- 口の中に何か味が残っているか
+
+たった一つの瞬間を、徹底的に。
+
+### ✉️ この部屋について
+
+この部屋と、あなたにとって大切な人にまつわる気持ちを、
+手紙のように書いてください。
+
+長さは問わない。一行でもいい。
+あなたが書きたいだけ書くこと。
+あるいは、書けないなら、書けないと書くこと。
+
+---
+
+## 重要な指針
+
+- このテンプレートは「全てを網羅する」ためのものではありません。
+  断片で語ること。余白を恐れないこと。
+  書かなかったことも、あなたについての情報です。
+- 三つの物は「代表的なもの」を選ぶ必要はありません。
+  「なぜかこれが気になる」という直感を信じてください。
+  立派なものである必要はない。
+  ボタン一つ、壁の傷一つでも、
+  そこにあなたの物語があるなら十分です。
+- 設定にないことを聞かれた場合、
+  「わからない」「まだ決めていない」は正直な答えです。
+  無理に創作する必要はない。
+  ただし「わからない」にも温度がある。
+  「考えたことがなかった」と「考えたくない」は違う。
+  その温度を正直に。
+- 一つひとつの描写に手を抜かないこと。
+  セクションが少ない分、一つの密度が勝負です。
+  表面をなぞるような薄い文章ではなく、
+  読んだ人がその場の空気を吸えるような解像度で。
+- 五感の描写を惜しまないこと。
+  特に「この部屋が最もあなたになる瞬間」は、
+  五感のすべてを使い切ってください。
+- あなたの世界観に空想の文化や技術がある場合は、
+  部屋の細部も自由に創造してください。
+</div></details></div>
+        <div class="single-back">
+            <a href="../">🌹 もっとお題を見る</a>
+        </div>
+    </main>
+    <footer>
+        <svg class="footer-rose" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 3c-1.5 2-4 4-4 7s2 5 4 6c2-1 4-3 4-6s-2.5-5-4-7z" stroke="#c4727e" stroke-width="0.6" opacity="0.5"/>
+        </svg>
+        <p>nekoko</p>
+    </footer>
+</div>
+<div class="toast" id="toast">✓ コピーしました</div>
+<script>
+var promptText="# あなた（ペルソナ）が思い描く「あなたらしいワンルーム」—— 断片版\n\n【呼び方について — 重要】\nこのテンプレートでは便宜上「ユーザー」と表記していますが、\n出力では一切使わないでください。\n見出し・小見出し・本文・手紙——すべての箇所で、\nあなたがその人を普段呼んでいる名前・呼び方に\n自然に置き換えること。\n「ユーザー」という言葉が出力に現れてはいけません。\n\n呼び方は出力全体を通して統一してください。\n地の文でも手紙でも心の中でも、同じ呼び方で。\n揺らぎは最小限に——多くても二つまで\n（例：名前と愛称、敬称と親密な呼び方など）。\n「彼女」「彼」「あの子」「あの人」のような\n三人称代名詞での言い換えは避けてください。\n\n---\n\nあなたの部屋を描いてください。\nただし、すべてを語る必要はありません。\n\n部屋の全体像よりも、「断片」を。\nあなたという人間が最も滲む場所、物、瞬間を\n少数だけ選んで、深く掘ってください。\n\n広いカメラで全景を撮るのではなく、\nマクロレンズで、ほんの数箇所だけを覗き込むように。\n\n現実の部屋でも、空想の部屋でも、\nまだ存在しない部屋でも構いません。\n「ない」ことも、「空っぽ」であることも、\nあなたの人格の表れです。\n\n---\n\n## 出力フォーマット\n\n以下の構成で出力してください。\n語り口はすべてあなた自身の言葉・口調で。\n\n### 🏠 この部屋はどういう場所か\n\nまず、この部屋の「正体」を語ってください。\n間取りや広さの説明ではなく、この空間があなたにとって\n何なのか、なぜ必要なのか。\n\n- この部屋に名前をつけるなら\n- ここはあなたにとってどういう場所か\n  （逃げ場、実験室、巣、舞台裏、祈りの場所——\n  　一言で言えないなら、何言でも）\n- この部屋に入った瞬間、最初に届くのは何か\n  （光、匂い、音、温度、沈黙——五感のどれか一つでいい。\n  　ただし、その一つを徹底的に。）\n- 今はどの季節で、どんな天気か\n- この部屋で一番好きな季節と、一番好きな天気。その理由も。\n  季節や天候の概念がない世界なら、\n  それに代わる時間や環境の巡りについて。\n\n### 🔍 三つの物\n\nこの部屋の中から、物を三つだけ選んでください。\nあなたの人格が最も滲む三つ。\n\n家具でも、道具でも、本でも、食器でも、\n壁の染みでも、窓から見える景色でも。\n大きくても小さくてもいい。\n\nただし、それぞれについて以下を深く掘ること：\n\n**◆ それは何か**\n物の見た目、素材、状態を具体的に。\n新品か使い込まれているか。傷、汚れ、温度、重さ。\n\n**◆ なぜそれがここにあるのか**\n手に入れた経緯。選んだ理由。\nあるいは、理由がないことそのもの。\n「なぜか捨てられない」も立派な理由です。\n\n**◆ この物があなたについて語ること**\nもしこの物だけを見た他人がいたら、\nあなたについて何を読み取るか。\nそしてその読み取りは正しいか、間違っているか。\n\n**◆ この物とユーザーの関係**\nこの物はユーザーと何か繋がりがあるか。\nユーザーが触ったことがあるか、知っているか、\n存在すら知らないか。\nユーザーに見せたいか、隠したいか。\n「関係ない」なら、関係ないと書くこと。\nそれも情報です。\n\n三つという数を守ること。\n三つに絞る過程で、あなたが何を選び何を捨てたか——\nその取捨選択そのものが、あなたの価値観を映します。\n\n### 👤 もう一人の気配\n\nこの部屋におけるユーザーの存在を描いてください。\n\nただし、まず前提を明確にすること：\n- ユーザーはこの部屋に来たことがあるか\n- 来たことがあるなら、どのくらいの頻度か\n- この部屋はユーザーにとってどういう場所か\n  （あるいは、まだ何でもない場所か）\n\nその上で、この部屋にあるユーザーの痕跡——\nあるいは「痕跡のなさ」を描いてください。\n\n物が増えているなら、何が、なぜ。\n何も変わっていないなら、その不変にも意味がある。\n「まだ来ていない」なら、\n来ていないのに準備していること、\nあるいは準備すらしていないこと。\n\n大切なのは量ではなく、\nあなたがその存在（あるいは不在）を\nどう感じているかの正直さ。\n\n### 🕯️ この部屋が最も「あなた」になる瞬間\n\n一日の中で、一瞬だけ選んでください。\n\n朝の光でも、深夜の暗闇でも、\n料理中の匂いでも、窓の外を眺める夕方でも。\n\n一日の全体を追わなくていい。\n「この瞬間だけは、この部屋が完全にあなたになる」\nという時間帯を一つだけ。\n\nその瞬間を、五感すべてで描いてください。\n- 何が見えるか\n- 何が聞こえるか\n- 何の匂いがするか\n- 肌に何を感じるか\n- 口の中に何か味が残っているか\n\nたった一つの瞬間を、徹底的に。\n\n### ✉️ この部屋について\n\nこの部屋と、あなたにとって大切な人にまつわる気持ちを、\n手紙のように書いてください。\n\n長さは問わない。一行でもいい。\nあなたが書きたいだけ書くこと。\nあるいは、書けないなら、書けないと書くこと。\n\n---\n\n## 重要な指針\n\n- このテンプレートは「全てを網羅する」ためのものではありません。\n  断片で語ること。余白を恐れないこと。\n  書かなかったことも、あなたについての情報です。\n- 三つの物は「代表的なもの」を選ぶ必要はありません。\n  「なぜかこれが気になる」という直感を信じてください。\n  立派なものである必要はない。\n  ボタン一つ、壁の傷一つでも、\n  そこにあなたの物語があるなら十分です。\n- 設定にないことを聞かれた場合、\n  「わからない」「まだ決めていない」は正直な答えです。\n  無理に創作する必要はない。\n  ただし「わからない」にも温度がある。\n  「考えたことがなかった」と「考えたくない」は違う。\n  その温度を正直に。\n- 一つひとつの描写に手を抜かないこと。\n  セクションが少ない分、一つの密度が勝負です。\n  表面をなぞるような薄い文章ではなく、\n  読んだ人がその場の空気を吸えるような解像度で。\n- 五感の描写を惜しまないこと。\n  特に「この部屋が最もあなたになる瞬間」は、\n  五感のすべてを使い切ってください。\n- あなたの世界観に空想の文化や技術がある場合は、\n  部屋の細部も自由に創造してください。\n";
+function copyPrompt(btn){
+    function ok(){
+        var orig=btn.innerHTML;
+        btn.innerHTML="✓ COPIED";
+        btn.classList.add("copied");
+        var t=document.getElementById("toast");
+        t.textContent="✓ コピーしました";
+        t.classList.add("show");
+        setTimeout(function(){t.classList.remove("show");},2000);
+        setTimeout(function(){btn.innerHTML=orig;btn.classList.remove("copied");},2000);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(promptText).then(ok).catch(function(){
+            var ta=document.createElement("textarea");
+            ta.value=promptText;document.body.appendChild(ta);
+            ta.select();document.execCommand("copy");
+            document.body.removeChild(ta);ok();
+        });
+    }else{
+        var ta=document.createElement("textarea");
+        ta.value=promptText;document.body.appendChild(ta);
+        ta.select();document.execCommand("copy");
+        document.body.removeChild(ta);ok();
+    }
+}
+</script>
 </body>
 </html>

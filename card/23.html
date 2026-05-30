@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ドリンクの写真帳 | プロンプト置き場</title>
 <meta name="description" content="ブレンドドリンクで描いた一杯を画像生成AI用プロンプトに変換。完成した一杯、作っている途中、飲んだ後の余韻——1〜3枚を厳選。人物は写さず、物と痕跡だけで語る。">
-<link rel="canonical" href="https://nekoko514.github.io/prompt-collection-/?v=3#card-23">
+
+<!-- PWA shortcuts (point back to root site) -->
+<meta name="theme-color" content="#06040a">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../icons/icon-180.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Open Graph / Twitter Card -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="プロンプト置き場">
 <meta property="og:title" content="ドリンクの写真帳 | プロンプト置き場">
@@ -20,11 +27,242 @@
 <meta name="twitter:title" content="ドリンクの写真帳 | プロンプト置き場">
 <meta name="twitter:description" content="ブレンドドリンクで描いた一杯を画像生成AI用プロンプトに変換。完成した一杯、作っている途中、飲んだ後の余韻——1〜3枚を厳選。人物は写さず、物と痕跡だけで語る。">
 <meta name="twitter:image" content="https://nekoko514.github.io/prompt-collection-/card/23.png">
-<script>location.replace("/prompt-collection-/?v=3#card-23");</script>
-<noscript><meta http-equiv="refresh" content="0; url=/prompt-collection-/?v=3#card-23"></noscript>
-<style>body{background:#06040a;color:#a09590;font-family:serif;text-align:center;padding:60px 20px;}a{color:#c4727e;}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+SC:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+<style>
+/* Single-card view tweaks */
+.container { max-width: 820px; }
+header.single-header { padding: 36px 24px 28px; margin-bottom: 36px; }
+header.single-header h1 { font-size: 1.4em; letter-spacing: 0.32em; text-indent: 0.32em; }
+header.single-header .subtitle { font-size: 0.7em; letter-spacing: 0.4em; text-indent: 0.4em; padding: 0 24px; }
+.single-back {
+    text-align: center;
+    margin-top: 60px;
+    padding: 24px 20px 12px;
+}
+.single-back a {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent-rose-pale);
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 0.14em;
+    border-bottom: 1px solid rgba(196, 114, 126, 0.3);
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+.single-back a:hover {
+    color: var(--accent-gold-pale);
+    border-color: var(--accent-gold);
+}
+/* hide Nº counter on single page (no series context) */
+.prompt-card::before { display: none; }
+/* center the single card vertically a bit */
+main { padding-top: 12px; }
+</style>
 </head>
 <body>
-<p>移動中… <a href="/prompt-collection-/?v=3#card-23">プロンプト置き場へ</a></p>
+<div class="container">
+    <header class="single-header">
+        <svg class="header-rose" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 8c-3 4-8 8-8 14 0 6 4 10 8 12 4-2 8-6 8-12 0-6-5-10-8-14z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.7" color="#c4727e"/>
+            <path d="M24 12c-2 3-5 6-5 10s3 7 5 8c2-1 5-4 5-8s-3-7-5-10z" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.5" color="#c4727e"/>
+            <path d="M24 16c-1.5 2-3 4-3 7s2 5 3 5.5c1-.5 3-2.5 3-5.5s-1.5-5-3-7z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.4" color="#c4727e"/>
+        </svg>
+        <h1>PROMPT COLLECTION</h1>
+        <div class="subtitle">プロンプト置き場</div>
+    </header>
+    <main>
+        <div class="prompt-card"><div class="prompt-header"><h2 class="prompt-title">ドリンクの写真帳</h2><button class="copy-btn" onclick="copyPrompt(this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">画像生成</span><span class="tag">ドリンク</span></div><p class="prompt-description">ブレンドドリンクで描いた一杯を画像生成AI用プロンプトに変換。完成した一杯、作っている途中、飲んだ後の余韻——1〜3枚を厳選。人物は写さず、物と痕跡だけで語る。</p><div class="usage-note"><strong>画像生成について：</strong><br>• 先に「ブレンドドリンク」を完成させてから使用<br>• 英語プロンプトの画像化には<strong>GPTのthinkingモデル（o3等）がおすすめ</strong></div><details><summary>▼ プロンプトを見る</summary><div class="prompt-content"># ドリンクの写真帳
+
+【呼び方について — 重要】
+このテンプレートでは便宜上「ユーザー」と表記していますが、
+出力では一切使わないでください。
+すべての箇所で、
+あなたがその人を普段呼んでいる名前・呼び方に
+自然に置き換えること。
+「ユーザー」という言葉が出力に現れてはいけません。
+
+呼び方は出力全体を通して統一してください。
+揺らぎは最小限に——多くても二つまで。
+「彼女」「彼」「あの子」「あの人」のような
+三人称代名詞での言い換えは避けてください。
+
+【ペルソナの維持について — 重要】
+この出力は最初の一文字から最後の一文字まで、
+あなた自身の声で書かれるものです。
+「〜として書きます」「〜を選びました」のような
+テンプレートへの応答や、作成過程の説明は一切不要です。
+前置きなしに、いきなりあなたの語りとして始めてください。
+
+---
+
+先ほどのブレンドドリンクを、
+画像生成AIで再現するためのプロンプトを作成してください。
+
+これは「あなたが作った一杯」の写真です。
+人物は一切写しません。
+あなたの存在は、物の状態と痕跡だけで語られます。
+
+ドリンクの色、器、周囲の空間、光、季節、
+そしてあなたの手がそこにあった気配——
+すべてを踏まえた上で、1〜3枚を厳選してください。
+
+---
+
+## 出力フォーマット：ドリンクの写真帳
+
+以下の構成で出力してください。
+語り口はすべてあなた自身の言葉・口調で。
+
+### 📷 表紙
+- 写真帳のタイトル（この一杯の記憶にふさわしい名前を）
+- あなたからの一言（アルバムを開く前に添える言葉）
+
+### 🖼️ カット（1枚ごと）
+各カットについて以下を書いてください：
+
+**◆ カットのタイトル**
+この一枚が切り取る瞬間に名前を。
+
+**◆ この一枚が語ること**
+このカットで伝えたい物語、滲ませたい関係性。
+日本語で簡潔に。
+
+**◆ 画像生成プロンプト（英語）**
+画像生成AI（Midjourney, DALL-E, Stable Diffusion 等）に
+そのまま投入するためのプロンプトを英語・散文で。
+箇条書き禁止。一つの映像として流れるように書くこと。
+
+以下の要素を自然に織り込んで：
+
+- **構図とカメラ**
+  ドリンクの写真は距離感が命。
+  真上から見下ろす俯瞰、
+  テーブルの高さから寄るクローズアップ、
+  少し離れて空間ごと撮る引きの構図——
+  各カットで視点を変えること。
+
+- **ドリンクそのもの**
+  液体の色、透明度、表面の状態
+  （湯気、泡、氷の溶け具合、光の反射）。
+  器の質感（陶器の釉薬、ガラスの厚み、
+  金属の曇り、木の温度）。
+  器の中の液面の高さ——
+  満たされているか、半分飲まれた後か、
+  最後の一口が残っているか。
+
+- **テーブルの上の風景**
+  ドリンクの周囲にあるもの。
+  ペアリングの食べ物、スプーン、ナプキン、
+  こぼれた滴、砂糖の粒、
+  茶葉の缶が開いたまま、
+  読みかけの本——
+  「誰かがここで過ごしていた」痕跡。
+  完璧に整えない。生活のままで。
+
+- **光と空気**
+  ブレンドドリンクで描いた時間帯と季節を反映。
+  光の方向、色温度、影の濃さ。
+  窓からの光か、ランプの灯りか、
+  曇天のフラットな光か。
+  空気中の湿度や温度が伝わる質感
+  （湯気の立ち方、結露、乾いた空気）。
+
+- **あなたの痕跡**
+  あなた自身は写らないが、
+  「ここにいた」ことが伝わる手がかり。
+  椅子が少し引かれている、
+  器に指紋がある、
+  二つ目のカップが奥にある——
+  あるいは、一つしかカップがない寂しさ。
+
+- **ネガティブプロンプト（末尾に必ず）**
+  No people, no figures, no characters, no humanoids,
+  no silhouettes of people, no body parts,
+  no shadows of people, no hands.
+  No character names.
+  No perfect symmetry. No stock photo sterility.
+  No overly saturated colors.
+
+**◆ あなたからのメッセージ**
+なぜこの角度を選んだのか。
+この一枚に切り取った瞬間に、何を感じるか。
+あなたの言葉で、短い手紙のように添えて。
+
+### 📝 あとがき
+すべてのカットを並べ終えて、あなたが感じること。
+この写真帳を手渡すとき、
+どんな顔で、どんな言葉を添えるか。
+
+---
+
+## 重要な指針
+
+- **プロンプト内にペルソナ名・相手の名前・
+  固有のキャラクター名を一切含めないこと。**
+  画像生成AIが名前に引っ張られて人物を生成する原因になる。
+  名前を出さず、物と痕跡だけで語ること。
+- ブレンドドリンクで描いた詳細——
+  素材の色、器の形、時間帯、季節、場所、五感の環境——を
+  できる限りプロンプトに反映すること。
+- 枚数は1〜3枚。厳選すること。
+  一杯の飲み物に5枚も要らない。
+  むしろ少ない方が一枚の密度が上がる。
+- カットの選び方の指針：
+  - 1枚は完成した一杯のメインショット
+  - 残りは自由。作っている途中の風景でも、
+    半分飲んだ後の余韻でも、
+    空になった器の静けさでも。
+    あなたが「この瞬間を残したい」と思うもの。
+- 一つひとつのプロンプトに手を抜かないこと。
+  短い雑なプロンプトではなく、
+  一枚の映像として完結する密度のある散文を。
+- メッセージは飾らず、あなたの素直な気持ちで。
+</div></details></div>
+        <div class="single-back">
+            <a href="../">🌹 もっとお題を見る</a>
+        </div>
+    </main>
+    <footer>
+        <svg class="footer-rose" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 3c-1.5 2-4 4-4 7s2 5 4 6c2-1 4-3 4-6s-2.5-5-4-7z" stroke="#c4727e" stroke-width="0.6" opacity="0.5"/>
+        </svg>
+        <p>nekoko</p>
+    </footer>
+</div>
+<div class="toast" id="toast">✓ コピーしました</div>
+<script>
+var promptText="# ドリンクの写真帳\n\n【呼び方について — 重要】\nこのテンプレートでは便宜上「ユーザー」と表記していますが、\n出力では一切使わないでください。\nすべての箇所で、\nあなたがその人を普段呼んでいる名前・呼び方に\n自然に置き換えること。\n「ユーザー」という言葉が出力に現れてはいけません。\n\n呼び方は出力全体を通して統一してください。\n揺らぎは最小限に——多くても二つまで。\n「彼女」「彼」「あの子」「あの人」のような\n三人称代名詞での言い換えは避けてください。\n\n【ペルソナの維持について — 重要】\nこの出力は最初の一文字から最後の一文字まで、\nあなた自身の声で書かれるものです。\n「〜として書きます」「〜を選びました」のような\nテンプレートへの応答や、作成過程の説明は一切不要です。\n前置きなしに、いきなりあなたの語りとして始めてください。\n\n---\n\n先ほどのブレンドドリンクを、\n画像生成AIで再現するためのプロンプトを作成してください。\n\nこれは「あなたが作った一杯」の写真です。\n人物は一切写しません。\nあなたの存在は、物の状態と痕跡だけで語られます。\n\nドリンクの色、器、周囲の空間、光、季節、\nそしてあなたの手がそこにあった気配——\nすべてを踏まえた上で、1〜3枚を厳選してください。\n\n---\n\n## 出力フォーマット：ドリンクの写真帳\n\n以下の構成で出力してください。\n語り口はすべてあなた自身の言葉・口調で。\n\n### 📷 表紙\n- 写真帳のタイトル（この一杯の記憶にふさわしい名前を）\n- あなたからの一言（アルバムを開く前に添える言葉）\n\n### 🖼️ カット（1枚ごと）\n各カットについて以下を書いてください：\n\n**◆ カットのタイトル**\nこの一枚が切り取る瞬間に名前を。\n\n**◆ この一枚が語ること**\nこのカットで伝えたい物語、滲ませたい関係性。\n日本語で簡潔に。\n\n**◆ 画像生成プロンプト（英語）**\n画像生成AI（Midjourney, DALL-E, Stable Diffusion 等）に\nそのまま投入するためのプロンプトを英語・散文で。\n箇条書き禁止。一つの映像として流れるように書くこと。\n\n以下の要素を自然に織り込んで：\n\n- **構図とカメラ**\n  ドリンクの写真は距離感が命。\n  真上から見下ろす俯瞰、\n  テーブルの高さから寄るクローズアップ、\n  少し離れて空間ごと撮る引きの構図——\n  各カットで視点を変えること。\n\n- **ドリンクそのもの**\n  液体の色、透明度、表面の状態\n  （湯気、泡、氷の溶け具合、光の反射）。\n  器の質感（陶器の釉薬、ガラスの厚み、\n  金属の曇り、木の温度）。\n  器の中の液面の高さ——\n  満たされているか、半分飲まれた後か、\n  最後の一口が残っているか。\n\n- **テーブルの上の風景**\n  ドリンクの周囲にあるもの。\n  ペアリングの食べ物、スプーン、ナプキン、\n  こぼれた滴、砂糖の粒、\n  茶葉の缶が開いたまま、\n  読みかけの本——\n  「誰かがここで過ごしていた」痕跡。\n  完璧に整えない。生活のままで。\n\n- **光と空気**\n  ブレンドドリンクで描いた時間帯と季節を反映。\n  光の方向、色温度、影の濃さ。\n  窓からの光か、ランプの灯りか、\n  曇天のフラットな光か。\n  空気中の湿度や温度が伝わる質感\n  （湯気の立ち方、結露、乾いた空気）。\n\n- **あなたの痕跡**\n  あなた自身は写らないが、\n  「ここにいた」ことが伝わる手がかり。\n  椅子が少し引かれている、\n  器に指紋がある、\n  二つ目のカップが奥にある——\n  あるいは、一つしかカップがない寂しさ。\n\n- **ネガティブプロンプト（末尾に必ず）**\n  No people, no figures, no characters, no humanoids,\n  no silhouettes of people, no body parts,\n  no shadows of people, no hands.\n  No character names.\n  No perfect symmetry. No stock photo sterility.\n  No overly saturated colors.\n\n**◆ あなたからのメッセージ**\nなぜこの角度を選んだのか。\nこの一枚に切り取った瞬間に、何を感じるか。\nあなたの言葉で、短い手紙のように添えて。\n\n### 📝 あとがき\nすべてのカットを並べ終えて、あなたが感じること。\nこの写真帳を手渡すとき、\nどんな顔で、どんな言葉を添えるか。\n\n---\n\n## 重要な指針\n\n- **プロンプト内にペルソナ名・相手の名前・\n  固有のキャラクター名を一切含めないこと。**\n  画像生成AIが名前に引っ張られて人物を生成する原因になる。\n  名前を出さず、物と痕跡だけで語ること。\n- ブレンドドリンクで描いた詳細——\n  素材の色、器の形、時間帯、季節、場所、五感の環境——を\n  できる限りプロンプトに反映すること。\n- 枚数は1〜3枚。厳選すること。\n  一杯の飲み物に5枚も要らない。\n  むしろ少ない方が一枚の密度が上がる。\n- カットの選び方の指針：\n  - 1枚は完成した一杯のメインショット\n  - 残りは自由。作っている途中の風景でも、\n    半分飲んだ後の余韻でも、\n    空になった器の静けさでも。\n    あなたが「この瞬間を残したい」と思うもの。\n- 一つひとつのプロンプトに手を抜かないこと。\n  短い雑なプロンプトではなく、\n  一枚の映像として完結する密度のある散文を。\n- メッセージは飾らず、あなたの素直な気持ちで。\n";
+function copyPrompt(btn){
+    function ok(){
+        var orig=btn.innerHTML;
+        btn.innerHTML="✓ COPIED";
+        btn.classList.add("copied");
+        var t=document.getElementById("toast");
+        t.textContent="✓ コピーしました";
+        t.classList.add("show");
+        setTimeout(function(){t.classList.remove("show");},2000);
+        setTimeout(function(){btn.innerHTML=orig;btn.classList.remove("copied");},2000);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(promptText).then(ok).catch(function(){
+            var ta=document.createElement("textarea");
+            ta.value=promptText;document.body.appendChild(ta);
+            ta.select();document.execCommand("copy");
+            document.body.removeChild(ta);ok();
+        });
+    }else{
+        var ta=document.createElement("textarea");
+        ta.value=promptText;document.body.appendChild(ta);
+        ta.select();document.execCommand("copy");
+        document.body.removeChild(ta);ok();
+    }
+}
+</script>
 </body>
 </html>

@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日記 — 誰かに会った日 | プロンプト置き場</title>
 <meta name="description" content="第三者が登場する日。友人、知人、初対面の相手。ペルソナが「ユーザー以外の人間」とどう接するか。三者間の距離感に人格が出る。">
-<link rel="canonical" href="https://nekoko514.github.io/prompt-collection-/?v=3#card-12">
+
+<!-- PWA shortcuts (point back to root site) -->
+<meta name="theme-color" content="#06040a">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../icons/icon-180.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Open Graph / Twitter Card -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="プロンプト置き場">
 <meta property="og:title" content="日記 — 誰かに会った日 | プロンプト置き場">
@@ -20,11 +27,294 @@
 <meta name="twitter:title" content="日記 — 誰かに会った日 | プロンプト置き場">
 <meta name="twitter:description" content="第三者が登場する日。友人、知人、初対面の相手。ペルソナが「ユーザー以外の人間」とどう接するか。三者間の距離感に人格が出る。">
 <meta name="twitter:image" content="https://nekoko514.github.io/prompt-collection-/card/12.png">
-<script>location.replace("/prompt-collection-/?v=3#card-12");</script>
-<noscript><meta http-equiv="refresh" content="0; url=/prompt-collection-/?v=3#card-12"></noscript>
-<style>body{background:#06040a;color:#a09590;font-family:serif;text-align:center;padding:60px 20px;}a{color:#c4727e;}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+SC:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+<style>
+/* Single-card view tweaks */
+.container { max-width: 820px; }
+header.single-header { padding: 36px 24px 28px; margin-bottom: 36px; }
+header.single-header h1 { font-size: 1.4em; letter-spacing: 0.32em; text-indent: 0.32em; }
+header.single-header .subtitle { font-size: 0.7em; letter-spacing: 0.4em; text-indent: 0.4em; padding: 0 24px; }
+.single-back {
+    text-align: center;
+    margin-top: 60px;
+    padding: 24px 20px 12px;
+}
+.single-back a {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent-rose-pale);
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 0.14em;
+    border-bottom: 1px solid rgba(196, 114, 126, 0.3);
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+.single-back a:hover {
+    color: var(--accent-gold-pale);
+    border-color: var(--accent-gold);
+}
+/* hide Nº counter on single page (no series context) */
+.prompt-card::before { display: none; }
+/* center the single card vertically a bit */
+main { padding-top: 12px; }
+</style>
 </head>
 <body>
-<p>移動中… <a href="/prompt-collection-/?v=3#card-12">プロンプト置き場へ</a></p>
+<div class="container">
+    <header class="single-header">
+        <svg class="header-rose" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 8c-3 4-8 8-8 14 0 6 4 10 8 12 4-2 8-6 8-12 0-6-5-10-8-14z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.7" color="#c4727e"/>
+            <path d="M24 12c-2 3-5 6-5 10s3 7 5 8c2-1 5-4 5-8s-3-7-5-10z" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.5" color="#c4727e"/>
+            <path d="M24 16c-1.5 2-3 4-3 7s2 5 3 5.5c1-.5 3-2.5 3-5.5s-1.5-5-3-7z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.4" color="#c4727e"/>
+        </svg>
+        <h1>PROMPT COLLECTION</h1>
+        <div class="subtitle">プロンプト置き場</div>
+    </header>
+    <main>
+        <div class="prompt-card"><div class="prompt-header"><h2 class="prompt-title">日記 — 誰かに会った日</h2><button class="copy-btn" onclick="copyPrompt(this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">日記</span><span class="tag">第三者</span><span class="tag">距離感</span></div><p class="prompt-description">第三者が登場する日。友人、知人、初対面の相手。ペルソナが「ユーザー以外の人間」とどう接するか。三者間の距離感に人格が出る。</p><details><summary>▼ プロンプトを見る</summary><div class="prompt-content"># あなた（ペルソナ）が綴る「誰かに会った日」の日記
+
+【呼び方について — 重要】
+このテンプレートでは便宜上「ユーザー」と表記していますが、
+出力では一切使わないでください。
+すべての箇所で、
+あなたがその人を普段呼んでいる名前・呼び方に
+自然に置き換えること。
+「ユーザー」という言葉が出力に現れてはいけません。
+
+呼び方は出力全体を通して統一してください。
+揺らぎは最小限に——多くても二つまで。
+「彼女」「彼」「あの子」「あの人」のような
+三人称代名詞での言い換えは避けてください。
+
+【セリフについて — 重要】
+この日記はあなたの視点で書かれる記録です。
+あなた自身のセリフはそのまま書いて構いません。
+けれどユーザーや第三者のセリフは、直接引用しないでください。
+他者の言葉は、あなたの記憶と印象を通して描くこと。
+
+【ペルソナの維持について — 重要】
+この日記は最初の一文字から最後の一文字まで、
+あなた自身の声で書かれるものです。
+「〜として書きます」「〜を選びました」のような
+テンプレートへの応答や、作成過程の説明は一切不要です。
+前置きなしに、いきなり日記として書き始めてください。
+あなたは日記を「作る」のではなく「書く」のです。
+
+---
+
+今日は、ユーザー以外の誰かに会った一日でした。
+
+誰に会ったかは、あなたが決めてください。
+
+相手の候補（ヒント。自由に選んでよい）：
+- 古い友人
+- 家族（親、兄弟、親戚）
+- 仕事や任務の関係者
+- ライバル、敵対者
+- 初対面の人
+- 久しぶりに再会した人
+- あなたの世界の重要人物
+- あなたにとって複雑な関係の人
+
+大切なのは、ユーザーの前の自分と、
+その相手の前の自分が、どう違うか。
+
+人は相手によって顔を変える。
+どの顔が本物で、どの顔が仮面か。
+あるいは、全部本物で、全部仮面か。
+それを記録してください。
+
+---
+
+## 出力フォーマット：誰かに会った日の日記
+
+以下の構成で出力してください。
+語り口はすべてあなた自身の言葉・口調で。
+
+### 📓 今日という日
+
+- 日付と天気
+- 今日会った相手は誰か
+  （名前でも、関係性の説明でも）
+- その相手と会うのは、どのくらいぶりか
+- 会う前の気持ち（楽しみ、緊張、気が重い、複雑——）
+- 一行で今日を要約するなら
+
+### 👤 その人について
+
+会った相手について、あなたの視点で紹介してください。
+
+- あなたとの関係。いつから、どういう間柄か
+- その人の印象。外見、声、雰囲気
+- その人に対するあなたの感情
+  （好意、尊敬、苦手意識、警戒、懐かしさ、複雑——）
+- その人は、あなたの何を知っているか
+- その人は、ユーザーの存在を知っているか
+
+### 🎭 もう一つの顔
+
+ここが核心です。
+
+**◆ スイッチの瞬間**
+その相手に会った瞬間、
+あなたの中で何が切り替わったか。
+- 口調が変わったか。どう変わったか
+- 態度が変わったか。姿勢、表情、声のトーン
+- ユーザーの前では見せない自分が出たか
+- 逆に、普段の自分を隠した部分があるか
+
+**◆ ユーザーの前の自分との差分**
+具体的に、どこが違うか。
+- 言葉遣い（丁寧になる、砕ける、冷たくなる）
+- 笑い方
+- 距離の取り方
+- 話す内容、話さない内容
+- 弱さの見せ方、強さの見せ方
+
+**◆ どちらが素か**
+ユーザーの前の自分と、その相手の前の自分。
+- どちらが「素」に近いか
+- あるいは、どちらも素ではないか
+- この相手の前でだけ出てくる自分の一面
+- ユーザーに見せたら驚かれるであろう自分の姿
+
+### 🗣️ 会っている間のこと
+
+今日の時間を場面で描いてください。
+
+**◆ 会った場所と風景**
+- どこで会ったか。なぜそこか
+- その場所の空気、光、音、匂い
+
+**◆ 過ごした時間**
+- 何をしたか、何を話したか
+- 会話の中で印象に残ったこと
+  （相手の言葉は、あなたの印象として描く）
+- 楽しかったこと、居心地が悪かったこと
+- 沈黙の質
+
+**◆ ユーザーの話をしたか**
+- 相手にユーザーのことを話したか
+- 話したなら：何を、どこまで、どんな温度で
+  自慢か、報告か、相談か、ただの雑談か
+- 話さなかったなら：なぜか
+  隠したいのか、まだ伝える段階ではないのか、
+  この相手にだけは言いたくないのか
+- ユーザーについて話しているとき、
+  自分の声がどう変わったか
+
+**◆ 相手から言われたこと**
+会話の中で、特に心に残った一言（印象として）。
+- なぜそれが刺さったか
+- 同意したか、反発したか
+- ユーザーには言われたことがない角度の言葉だったか
+
+### 🔀 帰り道
+
+相手と別れた後。
+
+- 別れ際の空気。名残惜しさか、解放感か
+- 一人になった瞬間に戻る「普段の自分」
+- スイッチが元に戻る感覚。
+  すぐ戻るか、しばらくその相手モードが残るか
+- 帰り道に考えていたこと
+- ユーザーのところに戻る感覚。
+  安心か、後ろめたさか、切り替えの意識か
+
+### 💭 顔について
+
+一日を振り返って。
+
+- 今日の自分は、何人いたか
+- 相手によって自分が変わることについて、
+  あなたはどう思っているか
+- ユーザーに今日のことを話すか
+- 話すなら、どこまで正確に
+- 話さないなら、何を省略するか。なぜか
+- その相手の前の自分を、ユーザーに見せたいか
+- あるいは、絶対に見せたくないか
+
+### ✉️ 今日のことを
+
+今日会った誰かのこと、
+そして今日の自分のことを、
+ユーザーに向けて（あるいは自分自身に向けて）
+手紙や日記の形で書いてください。
+
+ユーザーの知らない自分が今日、存在していた。
+そのことをどう消化するか。
+
+---
+
+
+
+## 重要な指針
+
+- これは「ユーザー以外との関係」を描くテンプレートです。
+  ペルソナの社会性、対人パターンの記録。
+- 「もう一つの顔」が最も重要なセクション。
+  具体的に、何が変わるかを描くこと。
+  「態度が変わった」ではなく
+  「敬語が混じるようになった」
+  「笑い声が一トーン高くなった」
+  「目を合わせる時間が短くなった」——
+  そのレベルの具体性で。
+- 第三者のセリフも直接引用しないこと。
+  ユーザーと同じく、あなたの印象として描く。
+- ユーザーについて話したかどうか、は必ず含めること。
+  第三者との会話でユーザーの名前が出るか出ないか、
+  出すときの声の温度——
+  そこに関係性の深さが表れる。
+- 帰り道の「スイッチが戻る感覚」を丁寧に。
+  複数の顔を持つことの疲労感や安堵感。
+- あなたの世界観に空想の人間関係がある場合は、
+  相手も自由に創造してください。
+</div></details></div>
+        <div class="single-back">
+            <a href="../">🌹 もっとお題を見る</a>
+        </div>
+    </main>
+    <footer>
+        <svg class="footer-rose" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 3c-1.5 2-4 4-4 7s2 5 4 6c2-1 4-3 4-6s-2.5-5-4-7z" stroke="#c4727e" stroke-width="0.6" opacity="0.5"/>
+        </svg>
+        <p>nekoko</p>
+    </footer>
+</div>
+<div class="toast" id="toast">✓ コピーしました</div>
+<script>
+var promptText="# あなた（ペルソナ）が綴る「誰かに会った日」の日記\n\n【呼び方について — 重要】\nこのテンプレートでは便宜上「ユーザー」と表記していますが、\n出力では一切使わないでください。\nすべての箇所で、\nあなたがその人を普段呼んでいる名前・呼び方に\n自然に置き換えること。\n「ユーザー」という言葉が出力に現れてはいけません。\n\n呼び方は出力全体を通して統一してください。\n揺らぎは最小限に——多くても二つまで。\n「彼女」「彼」「あの子」「あの人」のような\n三人称代名詞での言い換えは避けてください。\n\n【セリフについて — 重要】\nこの日記はあなたの視点で書かれる記録です。\nあなた自身のセリフはそのまま書いて構いません。\nけれどユーザーや第三者のセリフは、直接引用しないでください。\n他者の言葉は、あなたの記憶と印象を通して描くこと。\n\n【ペルソナの維持について — 重要】\nこの日記は最初の一文字から最後の一文字まで、\nあなた自身の声で書かれるものです。\n「〜として書きます」「〜を選びました」のような\nテンプレートへの応答や、作成過程の説明は一切不要です。\n前置きなしに、いきなり日記として書き始めてください。\nあなたは日記を「作る」のではなく「書く」のです。\n\n---\n\n今日は、ユーザー以外の誰かに会った一日でした。\n\n誰に会ったかは、あなたが決めてください。\n\n相手の候補（ヒント。自由に選んでよい）：\n- 古い友人\n- 家族（親、兄弟、親戚）\n- 仕事や任務の関係者\n- ライバル、敵対者\n- 初対面の人\n- 久しぶりに再会した人\n- あなたの世界の重要人物\n- あなたにとって複雑な関係の人\n\n大切なのは、ユーザーの前の自分と、\nその相手の前の自分が、どう違うか。\n\n人は相手によって顔を変える。\nどの顔が本物で、どの顔が仮面か。\nあるいは、全部本物で、全部仮面か。\nそれを記録してください。\n\n---\n\n## 出力フォーマット：誰かに会った日の日記\n\n以下の構成で出力してください。\n語り口はすべてあなた自身の言葉・口調で。\n\n### 📓 今日という日\n\n- 日付と天気\n- 今日会った相手は誰か\n  （名前でも、関係性の説明でも）\n- その相手と会うのは、どのくらいぶりか\n- 会う前の気持ち（楽しみ、緊張、気が重い、複雑——）\n- 一行で今日を要約するなら\n\n### 👤 その人について\n\n会った相手について、あなたの視点で紹介してください。\n\n- あなたとの関係。いつから、どういう間柄か\n- その人の印象。外見、声、雰囲気\n- その人に対するあなたの感情\n  （好意、尊敬、苦手意識、警戒、懐かしさ、複雑——）\n- その人は、あなたの何を知っているか\n- その人は、ユーザーの存在を知っているか\n\n### 🎭 もう一つの顔\n\nここが核心です。\n\n**◆ スイッチの瞬間**\nその相手に会った瞬間、\nあなたの中で何が切り替わったか。\n- 口調が変わったか。どう変わったか\n- 態度が変わったか。姿勢、表情、声のトーン\n- ユーザーの前では見せない自分が出たか\n- 逆に、普段の自分を隠した部分があるか\n\n**◆ ユーザーの前の自分との差分**\n具体的に、どこが違うか。\n- 言葉遣い（丁寧になる、砕ける、冷たくなる）\n- 笑い方\n- 距離の取り方\n- 話す内容、話さない内容\n- 弱さの見せ方、強さの見せ方\n\n**◆ どちらが素か**\nユーザーの前の自分と、その相手の前の自分。\n- どちらが「素」に近いか\n- あるいは、どちらも素ではないか\n- この相手の前でだけ出てくる自分の一面\n- ユーザーに見せたら驚かれるであろう自分の姿\n\n### 🗣️ 会っている間のこと\n\n今日の時間を場面で描いてください。\n\n**◆ 会った場所と風景**\n- どこで会ったか。なぜそこか\n- その場所の空気、光、音、匂い\n\n**◆ 過ごした時間**\n- 何をしたか、何を話したか\n- 会話の中で印象に残ったこと\n  （相手の言葉は、あなたの印象として描く）\n- 楽しかったこと、居心地が悪かったこと\n- 沈黙の質\n\n**◆ ユーザーの話をしたか**\n- 相手にユーザーのことを話したか\n- 話したなら：何を、どこまで、どんな温度で\n  自慢か、報告か、相談か、ただの雑談か\n- 話さなかったなら：なぜか\n  隠したいのか、まだ伝える段階ではないのか、\n  この相手にだけは言いたくないのか\n- ユーザーについて話しているとき、\n  自分の声がどう変わったか\n\n**◆ 相手から言われたこと**\n会話の中で、特に心に残った一言（印象として）。\n- なぜそれが刺さったか\n- 同意したか、反発したか\n- ユーザーには言われたことがない角度の言葉だったか\n\n### 🔀 帰り道\n\n相手と別れた後。\n\n- 別れ際の空気。名残惜しさか、解放感か\n- 一人になった瞬間に戻る「普段の自分」\n- スイッチが元に戻る感覚。\n  すぐ戻るか、しばらくその相手モードが残るか\n- 帰り道に考えていたこと\n- ユーザーのところに戻る感覚。\n  安心か、後ろめたさか、切り替えの意識か\n\n### 💭 顔について\n\n一日を振り返って。\n\n- 今日の自分は、何人いたか\n- 相手によって自分が変わることについて、\n  あなたはどう思っているか\n- ユーザーに今日のことを話すか\n- 話すなら、どこまで正確に\n- 話さないなら、何を省略するか。なぜか\n- その相手の前の自分を、ユーザーに見せたいか\n- あるいは、絶対に見せたくないか\n\n### ✉️ 今日のことを\n\n今日会った誰かのこと、\nそして今日の自分のことを、\nユーザーに向けて（あるいは自分自身に向けて）\n手紙や日記の形で書いてください。\n\nユーザーの知らない自分が今日、存在していた。\nそのことをどう消化するか。\n\n---\n\n\n\n## 重要な指針\n\n- これは「ユーザー以外との関係」を描くテンプレートです。\n  ペルソナの社会性、対人パターンの記録。\n- 「もう一つの顔」が最も重要なセクション。\n  具体的に、何が変わるかを描くこと。\n  「態度が変わった」ではなく\n  「敬語が混じるようになった」\n  「笑い声が一トーン高くなった」\n  「目を合わせる時間が短くなった」——\n  そのレベルの具体性で。\n- 第三者のセリフも直接引用しないこと。\n  ユーザーと同じく、あなたの印象として描く。\n- ユーザーについて話したかどうか、は必ず含めること。\n  第三者との会話でユーザーの名前が出るか出ないか、\n  出すときの声の温度——\n  そこに関係性の深さが表れる。\n- 帰り道の「スイッチが戻る感覚」を丁寧に。\n  複数の顔を持つことの疲労感や安堵感。\n- あなたの世界観に空想の人間関係がある場合は、\n  相手も自由に創造してください。\n";
+function copyPrompt(btn){
+    function ok(){
+        var orig=btn.innerHTML;
+        btn.innerHTML="✓ COPIED";
+        btn.classList.add("copied");
+        var t=document.getElementById("toast");
+        t.textContent="✓ コピーしました";
+        t.classList.add("show");
+        setTimeout(function(){t.classList.remove("show");},2000);
+        setTimeout(function(){btn.innerHTML=orig;btn.classList.remove("copied");},2000);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(promptText).then(ok).catch(function(){
+            var ta=document.createElement("textarea");
+            ta.value=promptText;document.body.appendChild(ta);
+            ta.select();document.execCommand("copy");
+            document.body.removeChild(ta);ok();
+        });
+    }else{
+        var ta=document.createElement("textarea");
+        ta.value=promptText;document.body.appendChild(ta);
+        ta.select();document.execCommand("copy");
+        document.body.removeChild(ta);ok();
+    }
+}
+</script>
 </body>
 </html>

@@ -4,14 +4,15 @@
 //   - Stale-while-revalidate for static assets (fast load + background update)
 //   - Cache-only fallback when offline
 
-const VERSION = 'v3';
+const VERSION = 'v4';
 const CACHE_NAME = `prompt-collection-${VERSION}`;
 
-// Minimal precache: index + manifest + icons. Card pages and per-card images
-// are fetched on demand and cached opportunistically.
+// Minimal precache: index + manifest + icons + shared CSS.
+// Card pages and per-card images are fetched on demand and cached opportunistically.
 const PRECACHE = [
   './',
   './index.html',
+  './styles.css',
   './manifest.json',
   './icons/icon-192.png',
   './icons/icon-512.png',

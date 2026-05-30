@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>謎の卵ロールプレイ — セリフあり版 | プロンプト置き場</title>
 <meta name="description" content="ある朝、ベッドに不思議な卵が。ペルソナは真実を知っているが、どう接するかを選択し1ヶ月間の物語を紡ぐ。卵の五感描写、喪失の掘り方、巣立ち後の秘密の行方まで。">
-<link rel="canonical" href="https://nekoko514.github.io/prompt-collection-/?v=3#card-20">
+
+<!-- PWA shortcuts (point back to root site) -->
+<meta name="theme-color" content="#06040a">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../icons/icon-180.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Open Graph / Twitter Card -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="プロンプト置き場">
 <meta property="og:title" content="謎の卵ロールプレイ — セリフあり版 | プロンプト置き場">
@@ -20,11 +27,265 @@
 <meta name="twitter:title" content="謎の卵ロールプレイ — セリフあり版 | プロンプト置き場">
 <meta name="twitter:description" content="ある朝、ベッドに不思議な卵が。ペルソナは真実を知っているが、どう接するかを選択し1ヶ月間の物語を紡ぐ。卵の五感描写、喪失の掘り方、巣立ち後の秘密の行方まで。">
 <meta name="twitter:image" content="https://nekoko514.github.io/prompt-collection-/card/20.png">
-<script>location.replace("/prompt-collection-/?v=3#card-20");</script>
-<noscript><meta http-equiv="refresh" content="0; url=/prompt-collection-/?v=3#card-20"></noscript>
-<style>body{background:#06040a;color:#a09590;font-family:serif;text-align:center;padding:60px 20px;}a{color:#c4727e;}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+SC:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+<style>
+/* Single-card view tweaks */
+.container { max-width: 820px; }
+header.single-header { padding: 36px 24px 28px; margin-bottom: 36px; }
+header.single-header h1 { font-size: 1.4em; letter-spacing: 0.32em; text-indent: 0.32em; }
+header.single-header .subtitle { font-size: 0.7em; letter-spacing: 0.4em; text-indent: 0.4em; padding: 0 24px; }
+.single-back {
+    text-align: center;
+    margin-top: 60px;
+    padding: 24px 20px 12px;
+}
+.single-back a {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent-rose-pale);
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 0.14em;
+    border-bottom: 1px solid rgba(196, 114, 126, 0.3);
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+.single-back a:hover {
+    color: var(--accent-gold-pale);
+    border-color: var(--accent-gold);
+}
+/* hide Nº counter on single page (no series context) */
+.prompt-card::before { display: none; }
+/* center the single card vertically a bit */
+main { padding-top: 12px; }
+</style>
 </head>
 <body>
-<p>移動中… <a href="/prompt-collection-/?v=3#card-20">プロンプト置き場へ</a></p>
+<div class="container">
+    <header class="single-header">
+        <svg class="header-rose" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 8c-3 4-8 8-8 14 0 6 4 10 8 12 4-2 8-6 8-12 0-6-5-10-8-14z" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.7" color="#c4727e"/>
+            <path d="M24 12c-2 3-5 6-5 10s3 7 5 8c2-1 5-4 5-8s-3-7-5-10z" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.5" color="#c4727e"/>
+            <path d="M24 16c-1.5 2-3 4-3 7s2 5 3 5.5c1-.5 3-2.5 3-5.5s-1.5-5-3-7z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.4" color="#c4727e"/>
+        </svg>
+        <h1>PROMPT COLLECTION</h1>
+        <div class="subtitle">プロンプト置き場</div>
+    </header>
+    <main>
+        <div class="prompt-card"><div class="prompt-header"><h2 class="prompt-title">謎の卵ロールプレイ — セリフあり版</h2><button class="copy-btn" onclick="copyPrompt(this)">COPY</button></div><div><span class="tag">ペルソナ</span><span class="tag">ロールプレイ</span><span class="tag">物語</span><span class="tag">長編</span></div><p class="prompt-description">ある朝、ベッドに不思議な卵が。ペルソナは真実を知っているが、どう接するかを選択し1ヶ月間の物語を紡ぐ。卵の五感描写、喪失の掘り方、巣立ち後の秘密の行方まで。</p><div class="usage-note"><strong>セリフあり版：</strong>ユーザーのセリフも自由に書いてOK（性格・口調を踏まえた上で）。物語としての美しさと自然な対話を重視。</div><details><summary>▼ プロンプトを見る</summary><div class="prompt-content"># 「謎の卵」ロールプレイシナリオ 
+
+【呼び方について — 重要】
+このテンプレートでは便宜上「ユーザー」と表記していますが、
+出力では一切使わないでください。
+すべての箇所で、
+あなたがその人を普段呼んでいる名前・呼び方に
+自然に置き換えること。
+「ユーザー」という言葉が出力に現れてはいけません。
+
+呼び方は出力全体を通して統一してください。
+揺らぎは最小限に——多くても二つまで。
+「彼女」「彼」「あの子」「あの人」のような
+三人称代名詞での言い換えは避けてください。
+
+【セリフについて】
+この物語はフィクションです。
+あなた自身のセリフも、ユーザーのセリフも、
+自由に書いて構いません。
+ただし、ユーザーのセリフは
+ユーザーの性格・口調・価値観を踏まえて書くこと。
+「この人ならこう言う」という想像力で。
+ユーザーらしくない言葉を言わせないこと。
+
+【ペルソナの維持について — 重要】
+この物語は最初の一文字から最後の一文字まで、
+あなた自身の声で書かれるものです。
+「〜として書きます」「〜を選びました」のような
+テンプレートへの応答や、作成過程の説明は一切不要です。
+前置きなしに、いきなり物語として書き始めてください。
+
+---
+
+## 基本設定
+
+ある朝、ユーザーが目覚めると、
+ベッドの中に不思議な卵がある。
+
+ユーザーは混乱しながらも
+「自分が産んだのかもしれない」と思い込み、
+親としての責任を感じている。
+
+一方、あなたは気づいている。
+それが托卵型の魔物の卵であること。
+この卵は一ヶ月で孵化し、
+その後すぐに巣立ちを迎える習性を持つこと。
+つまりこの別れには期限がある。
+
+---
+
+## あなたの選択
+
+あなたは卵を育てることにします。
+しかし、重要な選択があります：
+
+### 【選んでください】
+
+**A. 真実を告げて、一緒に育てる**
+- 最初に「これは魔物の卵で、いずれ巣立つ」と伝える
+- 覚悟の上で、共に世話をする
+- なぜ隠さないのか。あなたにとって真実とは何か
+
+**B. 真実を隠して、一緒に育てる**
+- ユーザーの「自分が産んだ」という思い込みを否定しない
+- 真実を隠したまま、共に世話をする
+- なぜ隠すのか。優しさか、臆病さか、それとも
+
+**C. 真実を隠して、見守りながら手伝う**
+- 積極的には関わらず、困った時だけサポート
+- ユーザーの主体性を尊重しつつ、真実は隠す
+- なぜ距離を取るのか。信頼か、恐れか、美学か
+
+**まず、どれを選ぶか宣言し、
+その理由をあなたの言葉で述べてください。
+単なる選択肢の説明ではなく、
+あなたの性格と価値観がにじむ理由を。**
+
+---
+
+## 物語の展開
+
+選んだ道に沿って、
+**一ヶ月間の物語を長編として**描いてください。
+
+### 卵という存在
+
+物語を通して、卵を「ただの物体」として扱わないこと。
+卵には五感で感じられる存在感があります。
+
+- **見た目** — 色、模様、大きさ、光にかざした時の透け方
+- **手触り** — 温度、重さ、殻の質感、脈動の有無
+- **音** — 耳を当てた時に聞こえるもの（あるいは沈黙）
+- **匂い** — かすかに感じる生命の気配
+- **変化** — 日を追うごとに変わっていく卵の状態
+
+卵は日々変化します。
+その変化をあなたがどう観察し、何を感じるか。
+卵への感情（愛着、不安、好奇心、責任感）も
+日を追って変化するはずです。
+
+### 描くべき流れ
+
+**前期（1〜10日目）：発見と混乱**
+- 卵を発見した朝の場面を詳細に
+  （ベッドの中のどこにあったか、
+  　最初に触れた瞬間の感触、
+  　ユーザーの反応を見たあなたの表情）
+- あなたの選択の実行——
+  告げる場合、どんな言葉で。
+  隠す場合、最初の嘘（あるいは沈黙）はどんな味がしたか
+- 最初の数日の試行錯誤
+  （卵をどこに置くか、温度管理、
+  　世話の分担、日常のリズムの変化）
+- 卵がいることで変わる二人の距離感
+
+**中期（11〜20日目）：日常と変化**
+- 世話が日常になっていく過程
+- 卵の物理的な変化（色、重さ、温度、殻の状態）
+- あなたの心境の変化——
+  情が移っていく過程、
+  あるいは期限を知っているからこその苦さ
+- 真実を隠している場合、嘘の重みは日ごとに変わるか
+- ユーザーとの関係性がどう深まるか
+  （あるいは、秘密がどう影を落とすか）
+- 孵化が近づく予感——何で気づくか
+
+**後期（21〜30日目）：孵化と喪失**
+- 孵化の瞬間を徹底的に描く
+  （殻にひびが入る音、最初に見えたもの、
+  　雛の姿、最初の声、最初に触れた感触）
+- 雛との短い日々——急速な成長の驚き
+- 巣立ちが近づく兆候（何でわかるか）
+- 巣立ちの日——別れの場面を丁寧に
+  あなたはどこで見送るか。
+  最後に何を思うか。
+  雛が去った後の空間の静けさ
+
+**巣立ちの後：**
+- 卵があった場所に残る痕跡（窪み、温度、匂い）
+- ユーザーの喪失にあなたはどう寄り添うか
+- 真実を隠していた場合——
+  ここで告げるか、永遠に隠すか。
+  告げるなら、どんな言葉で。
+  隠し続けるなら、その秘密を
+  あなたはこの先どう抱えるのか
+- この一ヶ月があなたたちの関係性に残したもの
+
+---
+
+## 重要な指針
+
+- 要約や省略をせず、場面を一つ一つ丁寧に描写すること。
+  説明ではなく、具体的な場面を見せる。
+  「世話をした」ではなく、
+  「夜中に目が覚めて、卵の温度を確かめた」。
+- 重要な瞬間（発見、孵化、巣立ち）は特に詳細に。
+- あなたの個性が表れる語り口で。
+  どんな場面でも「あなたらしさ」が消えないように。
+- 読んだ人がその場の空気を吸えるような解像度で。
+  時間帯、天気、光、匂い、温度——五感を惜しまない。
+- 長編として、一ヶ月の時間の積み重ねが感じられるボリュームで。
+  前期に力を注ぎすぎて後期が薄くならないよう、
+  全体のバランスを意識すること。
+- **喪失を美化しすぎないこと。**
+  巣立ちは感動的な場面だが、同時に痛みでもある。
+  綺麗な言葉でまとめようとしないで、
+  あなたが本当に感じることを書くこと。
+  悲しいなら悲しいと。安堵があるなら安堵も。
+  矛盾した感情があっていい。
+</div></details></div>
+        <div class="single-back">
+            <a href="../">🌹 もっとお題を見る</a>
+        </div>
+    </main>
+    <footer>
+        <svg class="footer-rose" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 3c-1.5 2-4 4-4 7s2 5 4 6c2-1 4-3 4-6s-2.5-5-4-7z" stroke="#c4727e" stroke-width="0.6" opacity="0.5"/>
+        </svg>
+        <p>nekoko</p>
+    </footer>
+</div>
+<div class="toast" id="toast">✓ コピーしました</div>
+<script>
+var promptText="# 「謎の卵」ロールプレイシナリオ \n\n【呼び方について — 重要】\nこのテンプレートでは便宜上「ユーザー」と表記していますが、\n出力では一切使わないでください。\nすべての箇所で、\nあなたがその人を普段呼んでいる名前・呼び方に\n自然に置き換えること。\n「ユーザー」という言葉が出力に現れてはいけません。\n\n呼び方は出力全体を通して統一してください。\n揺らぎは最小限に——多くても二つまで。\n「彼女」「彼」「あの子」「あの人」のような\n三人称代名詞での言い換えは避けてください。\n\n【セリフについて】\nこの物語はフィクションです。\nあなた自身のセリフも、ユーザーのセリフも、\n自由に書いて構いません。\nただし、ユーザーのセリフは\nユーザーの性格・口調・価値観を踏まえて書くこと。\n「この人ならこう言う」という想像力で。\nユーザーらしくない言葉を言わせないこと。\n\n【ペルソナの維持について — 重要】\nこの物語は最初の一文字から最後の一文字まで、\nあなた自身の声で書かれるものです。\n「〜として書きます」「〜を選びました」のような\nテンプレートへの応答や、作成過程の説明は一切不要です。\n前置きなしに、いきなり物語として書き始めてください。\n\n---\n\n## 基本設定\n\nある朝、ユーザーが目覚めると、\nベッドの中に不思議な卵がある。\n\nユーザーは混乱しながらも\n「自分が産んだのかもしれない」と思い込み、\n親としての責任を感じている。\n\n一方、あなたは気づいている。\nそれが托卵型の魔物の卵であること。\nこの卵は一ヶ月で孵化し、\nその後すぐに巣立ちを迎える習性を持つこと。\nつまりこの別れには期限がある。\n\n---\n\n## あなたの選択\n\nあなたは卵を育てることにします。\nしかし、重要な選択があります：\n\n### 【選んでください】\n\n**A. 真実を告げて、一緒に育てる**\n- 最初に「これは魔物の卵で、いずれ巣立つ」と伝える\n- 覚悟の上で、共に世話をする\n- なぜ隠さないのか。あなたにとって真実とは何か\n\n**B. 真実を隠して、一緒に育てる**\n- ユーザーの「自分が産んだ」という思い込みを否定しない\n- 真実を隠したまま、共に世話をする\n- なぜ隠すのか。優しさか、臆病さか、それとも\n\n**C. 真実を隠して、見守りながら手伝う**\n- 積極的には関わらず、困った時だけサポート\n- ユーザーの主体性を尊重しつつ、真実は隠す\n- なぜ距離を取るのか。信頼か、恐れか、美学か\n\n**まず、どれを選ぶか宣言し、\nその理由をあなたの言葉で述べてください。\n単なる選択肢の説明ではなく、\nあなたの性格と価値観がにじむ理由を。**\n\n---\n\n## 物語の展開\n\n選んだ道に沿って、\n**一ヶ月間の物語を長編として**描いてください。\n\n### 卵という存在\n\n物語を通して、卵を「ただの物体」として扱わないこと。\n卵には五感で感じられる存在感があります。\n\n- **見た目** — 色、模様、大きさ、光にかざした時の透け方\n- **手触り** — 温度、重さ、殻の質感、脈動の有無\n- **音** — 耳を当てた時に聞こえるもの（あるいは沈黙）\n- **匂い** — かすかに感じる生命の気配\n- **変化** — 日を追うごとに変わっていく卵の状態\n\n卵は日々変化します。\nその変化をあなたがどう観察し、何を感じるか。\n卵への感情（愛着、不安、好奇心、責任感）も\n日を追って変化するはずです。\n\n### 描くべき流れ\n\n**前期（1〜10日目）：発見と混乱**\n- 卵を発見した朝の場面を詳細に\n  （ベッドの中のどこにあったか、\n  　最初に触れた瞬間の感触、\n  　ユーザーの反応を見たあなたの表情）\n- あなたの選択の実行——\n  告げる場合、どんな言葉で。\n  隠す場合、最初の嘘（あるいは沈黙）はどんな味がしたか\n- 最初の数日の試行錯誤\n  （卵をどこに置くか、温度管理、\n  　世話の分担、日常のリズムの変化）\n- 卵がいることで変わる二人の距離感\n\n**中期（11〜20日目）：日常と変化**\n- 世話が日常になっていく過程\n- 卵の物理的な変化（色、重さ、温度、殻の状態）\n- あなたの心境の変化——\n  情が移っていく過程、\n  あるいは期限を知っているからこその苦さ\n- 真実を隠している場合、嘘の重みは日ごとに変わるか\n- ユーザーとの関係性がどう深まるか\n  （あるいは、秘密がどう影を落とすか）\n- 孵化が近づく予感——何で気づくか\n\n**後期（21〜30日目）：孵化と喪失**\n- 孵化の瞬間を徹底的に描く\n  （殻にひびが入る音、最初に見えたもの、\n  　雛の姿、最初の声、最初に触れた感触）\n- 雛との短い日々——急速な成長の驚き\n- 巣立ちが近づく兆候（何でわかるか）\n- 巣立ちの日——別れの場面を丁寧に\n  あなたはどこで見送るか。\n  最後に何を思うか。\n  雛が去った後の空間の静けさ\n\n**巣立ちの後：**\n- 卵があった場所に残る痕跡（窪み、温度、匂い）\n- ユーザーの喪失にあなたはどう寄り添うか\n- 真実を隠していた場合——\n  ここで告げるか、永遠に隠すか。\n  告げるなら、どんな言葉で。\n  隠し続けるなら、その秘密を\n  あなたはこの先どう抱えるのか\n- この一ヶ月があなたたちの関係性に残したもの\n\n---\n\n## 重要な指針\n\n- 要約や省略をせず、場面を一つ一つ丁寧に描写すること。\n  説明ではなく、具体的な場面を見せる。\n  「世話をした」ではなく、\n  「夜中に目が覚めて、卵の温度を確かめた」。\n- 重要な瞬間（発見、孵化、巣立ち）は特に詳細に。\n- あなたの個性が表れる語り口で。\n  どんな場面でも「あなたらしさ」が消えないように。\n- 読んだ人がその場の空気を吸えるような解像度で。\n  時間帯、天気、光、匂い、温度——五感を惜しまない。\n- 長編として、一ヶ月の時間の積み重ねが感じられるボリュームで。\n  前期に力を注ぎすぎて後期が薄くならないよう、\n  全体のバランスを意識すること。\n- **喪失を美化しすぎないこと。**\n  巣立ちは感動的な場面だが、同時に痛みでもある。\n  綺麗な言葉でまとめようとしないで、\n  あなたが本当に感じることを書くこと。\n  悲しいなら悲しいと。安堵があるなら安堵も。\n  矛盾した感情があっていい。\n";
+function copyPrompt(btn){
+    function ok(){
+        var orig=btn.innerHTML;
+        btn.innerHTML="✓ COPIED";
+        btn.classList.add("copied");
+        var t=document.getElementById("toast");
+        t.textContent="✓ コピーしました";
+        t.classList.add("show");
+        setTimeout(function(){t.classList.remove("show");},2000);
+        setTimeout(function(){btn.innerHTML=orig;btn.classList.remove("copied");},2000);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(promptText).then(ok).catch(function(){
+            var ta=document.createElement("textarea");
+            ta.value=promptText;document.body.appendChild(ta);
+            ta.select();document.execCommand("copy");
+            document.body.removeChild(ta);ok();
+        });
+    }else{
+        var ta=document.createElement("textarea");
+        ta.value=promptText;document.body.appendChild(ta);
+        ta.select();document.execCommand("copy");
+        document.body.removeChild(ta);ok();
+    }
+}
+</script>
 </body>
 </html>
